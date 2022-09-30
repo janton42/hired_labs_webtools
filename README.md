@@ -4,19 +4,27 @@ Main repository for web-based tools designed and created by Hired Labs.
 
 ## Installation
 
-Start a virtual environment by any means with which you are comfortable.
+### 1. Check your Python
+Make sure you have some version of `Python 3` installed.
 
-### pyenv
 ```bash
-pyenv virtualenv [PYTHON VERSION*(>=3)] environment_name\
-&& pyenv activate environment_name
+python --version
 ```
-Update and install basic packages.
+If not, you can find downloads and setup instructions [here](https://www.python.org/downloads/)
+
+### 2. Create a project folder
 ```bash
-python3 -m pip install pip --upgrade
+mkdir project_name\
+&& cd project_name
 ```
 
-Install requirements.
+### 3. Start a virtual environment
+```bash
+python3 -m venv venv\
+&& source venv/bin/activate
+```
+
+### 4. Install requirements.
 ```bash
 pip install -r requirements.txt
 ```
