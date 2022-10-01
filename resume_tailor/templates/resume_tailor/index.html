@@ -1,0 +1,9 @@
+{% extends 'resume_tailor/base.html' %}
+
+{% block content %}
+  {% if context %}
+    <p> You are at the index page in a particular context</p>
+  {% else %}
+    <p> This is the index page with no context</p>
+  {% endif %}
+{% endblock %}

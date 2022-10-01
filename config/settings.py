@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 from environ import Env
 
-# Create environment to store hidden secret keys, etc. 
+# Create environment to store hidden secret keys, etc.
 env = Env()
 env.read_env(env_file='config/.env')
 
@@ -37,6 +37,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'resume_tailor.apps.ResumeTailorConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
