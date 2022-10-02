@@ -2,10 +2,21 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>Resume Tailor Home</title>
+    <title>Resume Tailor</title>
   </head>
   <body>
-    <p>You have arrived!</p>
-
-  </body>
+    <header class="page-header">
+      <div class="container">
+          <h1>Resume Tailor Base</h1>
+      </div>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </main>
+</body>
 </html>
