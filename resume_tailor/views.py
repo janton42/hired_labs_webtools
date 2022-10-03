@@ -4,5 +4,8 @@ from django.template import loader
 
 from .models import Location
 
-def index(request):
-    return render(request,'resume_tailor/index.html')
+def home(request):
+    return render(request, 'hired_labs_home.html')
+
+def resume_tailor_home(request):
+    return render(request,'resume_tailor_home.html')
