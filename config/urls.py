@@ -15,11 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include,path
+from django.contrib.auth import views as auth_views
 
 from resume_tailor import views as rt_views
 
 urlpatterns = [
     path('', rt_views.home, name='home'),
     path('resume_tailor/', include('resume_tailor.urls')),
+    path('register/', rt_views.register, name='register'),
     path('admin/', admin.site.urls),
+
+    path('login/', auth_views\
+    .LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', auth_views\
+    .LogoutView.as_view(template_name='logout.html'), name='logout'),
 ]
