@@ -83,7 +83,7 @@ class Setting(models.Model):
     dark_mode = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.user.get_full_name()
+        return self.user.user.get_full_name()
 
 class Consentration(models.Model):
     name = models.CharField(max_length=25)
@@ -92,19 +92,23 @@ class Consentration(models.Model):
         return self.name
 
 class Education(models.Model):
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE)
     grad_date = models.DateField()
     org = models.ForeignKey(Organization, on_delete=models.CASCADE)
     degree = models.ForeignKey(Degree, on_delete=models.CASCADE)
     consentration = models.ForeignKey(Consentration, on_delete=models.CASCADE)
 
     def __str__(self):
-        0
+        return  '{}: {}, {} - {}'.format(\
+        self.user.user.get_full_name(),\
+        self.org, self.degree, self.consentration)
 
 class Experience(models.Model):
     EXP_LABELS = [
         ('Work','Work'),
         ('Leadership','Leadership'),
     ]
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE)
     start_date = models.DateField()
     end_date = models.DateField()
     label = models.CharField(max_length=20, choices=EXP_LABELS)
@@ -137,7 +141,7 @@ class UserSkillLevel(models.Model):
     level = models.IntegerField()
 
     def __str__(self):
-        return '{}: {}, {}'.format(self.user, self.text, self.experience)
+        return '{}: {}, {}'.format(self.user, self.skill, self.level)
 
 class ResumeUpload(models.Model):
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
