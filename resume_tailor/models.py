@@ -33,6 +33,7 @@ class Organization(models.Model):
     website = models.CharField(max_length=100)
     sector = models.CharField(max_length=250)
     size = models.CharField(max_length=250)
+    loc = models.ForeignKey(Location, on_delete=models.CASCADE,default=1,null=True)
 
     def __str__(self):
         return self.name
