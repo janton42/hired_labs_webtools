@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Location, Participant
+from .models import Location, Profile
 
 admin.site.register(Location)
-admin.site.register(Participant)
+admin.site.register(Profile)
