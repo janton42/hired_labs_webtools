@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import UserRegistrationForm, UpdateProfileForm
 
-from .models import Location
+from .models import Location, Setting
 
 def home(request):
     return render(request, 'hired_labs_home.html')

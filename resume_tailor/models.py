@@ -85,23 +85,32 @@ class Setting(models.Model):
     def __str__(self):
         return self.user.user.get_full_name()
 
-class Consentration(models.Model):
+    def get_queryset(self):
+        return self.model.objects.all().filter(issuer=self.request.user)
+
+class Concentration(models.Model):
     name = models.CharField(max_length=25)
 
     def __str__(self):
         return self.name
+
+    def get_queryset(self):
+        return self.model.objects.all().filter(issuer=self.request.user)
 
 class Education(models.Model):
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
     grad_date = models.DateField()
     org = models.ForeignKey(Organization, on_delete=models.CASCADE)
     degree = models.ForeignKey(Degree, on_delete=models.CASCADE)
-    consentration = models.ForeignKey(Consentration, on_delete=models.CASCADE)
+    concentration = models.ForeignKey(Concentration, on_delete=models.CASCADE)
 
     def __str__(self):
         return  '{}: {}, {} - {}'.format(\
         self.user.user.get_full_name(),\
-        self.org, self.degree, self.consentration)
+        self.org, self.degree, self.concentration)
+
+    def get_queryset(self):
+        return self.model.objects.all().filter(issuer=self.request.user)
 
 class Experience(models.Model):
     EXP_LABELS = [
@@ -121,7 +130,8 @@ class Experience(models.Model):
         return  '{}: {}'.format(\
         self.org, self.position)
 
-
+    def get_queryset(self):
+        return self.model.objects.all().filter(issuer=self.request.user)
 
 class Bullet(models.Model):
     BULLET_TYPES = [
@@ -134,6 +144,9 @@ class Bullet(models.Model):
 
     def __str__(self):
         return '{}: {}, {}'.format(self.id, self.text, self.experience)
+
+    def get_queryset(self):
+        return self.model.objects.all().filter(issuer=self.request.user)
 
 class UserSkillLevel(models.Model):
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
