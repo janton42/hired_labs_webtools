@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if user_settings %}
+    <ul>
+      {% for setting in user_settings %}
+        <li><p>Email Notifications:
+          {{ setting.email_notifications }}</p></li>
+        <li><p>SMS Notifications:
+          {{ setting.sms_notifications }}</p></li>
+        <li><p>Dark mode:
+          {{ setting.dark_mode }}</p></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Nothing here</p>
+  {% endif %}
+{% endblock %}

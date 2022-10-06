@@ -32,6 +32,14 @@ def resume_tailor_home(request):
 def profile(request):
     return render(request, 'profile.html')
 
+@login_required
+def settings(request):
+    user_settings = Setting.objects.all()\
+    .filter(user__user=request.user)\
+    .values()
+    context = { 'user_settings': user_settings }
+    return render(request, 'settings.html', context)
+
 
 @login_required
 def update_profile(request):
