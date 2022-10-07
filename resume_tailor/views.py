@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import UserRegistrationForm, UpdateProfileForm
 
-from .models import Location, Setting
+from .models import Location, Setting, Profile
 
 def home(request):
     return render(request, 'hired_labs_home.html')
@@ -30,7 +30,11 @@ def resume_tailor_home(request):
 
 @login_required
 def profile(request):
-    return render(request, 'profile.html')
+    user_profile = Profile.objects.all()\
+    .filter(user=request.user)\
+    .values()
+    context = { 'user_profile': user_profile }
+    return render(request, 'profile.html', context)
 
 @login_required
 def settings(request):

@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <p>This would be your profile, but I'm too lazy to grab it from the db.</p>
+  {% if user_profile %}
+    <ul>
+      {% for profile in user_profile %}
+        <li><p>Location:
+          {{ profile.loc_id }}</p></li>
+        <li><p>Phone:
+          {{ profile.phone }}</p></li>
+        <li><p>LinkedIn Profile URL:
+          {{ profile.linkedin }}</p></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Nothing here</p>
+  {% endif %}
 {% endblock %}

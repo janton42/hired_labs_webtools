@@ -85,9 +85,6 @@ class Setting(models.Model):
     def __str__(self):
         return self.user.user.get_full_name()
 
-    # def get_queryset(self):
-    #     return self.model.objects.all().filter(issuer=self.request.user)
-
 class Concentration(models.Model):
     name = models.CharField(max_length=25)
 
