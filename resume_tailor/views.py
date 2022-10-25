@@ -7,6 +7,9 @@ from .forms import UserRegistrationForm, UpdateProfileForm
 
 from .models import Location, Setting, Profile
 
+# Home page (home) and Registration page (register) are the only pages
+# accessible without a login.
+
 def home(request):
     return render(request, 'hired_labs_home.html')
 
@@ -23,6 +26,8 @@ def register(request):
         form = UserRegistrationForm()
     context = {'form': form}
     return render(request, 'register.html', context)
+
+# All views below should require login
 
 @login_required
 def resume_tailor_home(request):

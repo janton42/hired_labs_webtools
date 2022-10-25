@@ -23,7 +23,7 @@ urlpatterns = [
     path('', rt_views.home, name='home'),
     path('resume_tailor/', include('resume_tailor.urls')),
     path('register/', rt_views.register, name='register'),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
 
     path('login/', auth_views\
     .LoginView.as_view(template_name='login.html'), name='login'),
