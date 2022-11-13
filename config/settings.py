@@ -29,9 +29,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ['janton42.pythonanywhere.com']
+# For development
+DEBUG = True
+ALLOWED_HOSTS = ['*']
+
+# For production
+# DEBUG = False
+# ALLOWED_HOSTS = ['janton42.pythonanywhere.com']
 
 
 # Application definition
@@ -136,9 +141,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Not included in startproject
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
-SECURE_HSTS_SECONDS = 25
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+
+# Comment out the lines below for dev, uncomment them in prod
+# SECURE_HSTS_SECONDS = 25
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
