@@ -1,0 +1,40 @@
+/* Color Pallette
+Light Background
+background = #ffffff (white)
+primary = #f7941d (orange)
+primary_border = #fbb040 (light orange)
+secondary = #0e1f33 (black)
+secondary_border = #525e6c (gray)
+
+Dark Background
+background = #0e1f33 (black)
+primary = #f7941d (orange)
+primary_border = #705029 (brown)
+secondary = #ffffff (white)
+secondary_border = #4a5766 (dark gray)
+
+Others:
+#f79822
+#fbb040
+#61492b (light brown)
+#7e5728 (brown)
+#825928
+#55616f
+ */
+
+
+header {
+    background: #f7941d;
+}
+
+h1 {
+    color: #0e1f33;
+
+}
+
+.page-header {
+    background: #f7941d;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    text-align: center;
+}
