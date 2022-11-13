@@ -1,9 +1,14 @@
 <!DOCTYPE html>
+{% load static%}
+{% get_static_prefix as STATIC_PREFIX %}
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <title>Hired Labs</title>
-  </head>
+ <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>Hired Labs</title>
+	<script src="https://use.fontawesome.com/382d19b8cb.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}styles/style.css"/>
+</head>
   <body>
     <header class="page-header">
       <div class="container">
