@@ -1,23 +1,71 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block welcome %}
   {% if user.is_authenticated %}
       <div class="alert alert-success" role="alert">
           <h3>Welcome {{ user.first_name }}!</h3>
-          <a href="{% url 'settings' %}">View Settings</a>
-          <br>
-          <br>
-          <a href="{% url 'resume_tailor_home' %}">Resume Tailor</a>
-          <br>
-          <br>
-          <a href="{% url 'profile' %}">View Profile</a>
-          <br>
       </div>
+      <div class="nav">
+        <a href="{% url 'settings' %}" class="button">View Settings</a>
+        <a href="{% url 'resume_tailor_home' %}" class="button">Resume Tailor</a>
+        <a href="{% url 'profile' %}" class="button">View Profile</a>
+      </div>
+
   {% else %}
       <div class="alert alert-success" role="alert">
           <h3>Welcome!</h3>
-          <a href="{% url 'register' %}">Signup</a>
-          <a href="{% url 'login' %}">Login</a>
       </div>
+      <!-- <div class="signup">
+        <a href="{% url 'register' %}" class="button">Signup</a>
+        <a href="{% url 'login' %}" class="button">Login</a>
+      </div> -->
+
   {% endif %}
+{% endblock %}
+
+{% block walkthrough %}
+<h2>Beta Trials: Operation "Foot in the Door"</h2>
+ <div id="stepOne">
+   <h3>1. Intake Form</h3>
+   <p>Give us some basic information by filling out the form below. You'll need to provide the following:</p>
+   <ul>
+     <li>Your current resume, if you have one. If not, that's okay.</li>
+     <li>A handful of job posts (2-3), in which you are interested.</li>
+     <li>Information about your service (branch, rank, mos)</li>
+   </ul>
+   <div class="signup">
+     <a href="https://forms.gle/7raq6XJqCrZD6bhF7" class="button">Beta Trials Intake Form</a>
+   </div>
+ </div>
+ <div id="stepTwo">
+   <h3>2. Intake Call</h3>
+   <p>Meet with us for a quick 30-45 min. call, during which, we will get to know you better. We'll have a very relaxed conversation about your background, expereience, and what you're looking for in your next role</p>
+ </div>
+ <div id="stepThree">
+   <h3>Resume Updates & Job Search</h3>
+   <p>We update your resume for you, and conduct a preliminary search of best-fit open roles
+   according to the intake interview. </p>
+ </div>
+ <div id="stepFour">
+   <h3>3. Resume Updates & Job Search</h3>
+   <p>We update your resume for you, and conduct a preliminary search of best-fit open roles
+   according to the intake interview. At the end of this step, you'll have a professionally updated resume, and a list of
+   open jobs, for which you are a strong candidate.</p>
+ </div>
+ <div id="stepFive">
+   <h3>4. Application</h3>
+   <p>Using the updated resume and list of job posts provided, you apply to the jobs. We don't currently provide cover letters,
+   so if any of the applications requires one, you'll need to write one for that application.</p>
+ </div>
+ <div id="stepSix">
+   <h3>5. Record Results</h3>
+   <p>We will provide a simply spreadsheet to track applications and their outcome.
+   The goal is to get called back for an initial interview. </p>
+ </div>
+ <div id="conclusion">
+   <h3>6. Conclusion</h3>
+   <p>Step 5 above is the last phase of our Beta Trials, but our involvement doesn't stop there.
+    As part of our high-touch placement services, we also offer interview prep, salary negotiation advice, and more!</p>
+ </div>
+
 {% endblock %}
