@@ -13,6 +13,8 @@
       {% endfor %}
     </ul>
   {% else %}
-    <p>Nothing here</p>
+    <p>You haven't completed your profile!</p>
+    <a href="{% url 'update_profile' %}">Update Profile</a>
+
   {% endif %}
 {% endblock %}

@@ -154,7 +154,7 @@ class UserSkillLevel(models.Model):
         return '{}: {}, {}'.format(self.user, self.skill, self.level)
 
 class ResumeUpload(models.Model):
-    user = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=20)
     resume = models.FileField(upload_to='uploads/')
 

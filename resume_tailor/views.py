@@ -3,9 +3,10 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 
-from .forms import UserRegistrationForm, UpdateProfileForm
+from .forms import UserRegistrationForm, UpdateProfileForm, \
+UploadFileForm
 
-from .models import Location, Setting, Profile
+from .models import Location, Setting, Profile, ResumeUpload
 
 # Home page (home) and Registration page (register) are the only pages
 # accessible without a login.
@@ -31,7 +32,13 @@ def register(request):
 
 @login_required
 def resume_tailor_home(request):
-    return render(request,'resume_tailor_home.html')
+    resumes = ResumeUpload.objects.all()\
+    .filter(user=request.user)\
+    .values()
+    context = {
+        'resumes': resumes
+    }
+    return render(request,'resume_tailor_home.html', context)
 
 @login_required
 def profile(request):
@@ -58,8 +65,24 @@ def update_profile(request):
             profile = form.save(commit=False)
             profile.user = request.user
             profile.save()
-            return redirect('profile_view',pk=profile.pk)
+            return redirect('profile.html',pk=profile.pk)
     else:
         form = UpdateProfileForm()
     context = { 'form': form }
     return render(request, 'profile_update.html', context)
+
+@login_required
+def upload_resume(request):
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            upload = form.save(commit=False)
+            upload.user = request.user
+            upload.save()
+            return redirect('resume_tailor_home')
+        else:
+            print(form.errors)
+    else:
+        form = UploadFileForm()
+    context = { 'form': form }
+    return render(request, 'resume_upload.html', context)
