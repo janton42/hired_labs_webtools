@@ -57,7 +57,7 @@ footer {
 footer p {
   font-size: 14px;
   word-spacing: 2px;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   text-align: center;
   color: #ffffff;
   padding-top: 10px;
@@ -113,4 +113,16 @@ background: #144E75; }
 
 #conclusion {
   margin-bottom: 65px;
+}
+
+@media (max-width: 600px) {
+
+footer p {
+  font-size: 10px;
+  word-spacing: 1px;
+  /*text-transform: capitalize;*/
+  text-align: center;
+  color: #ffffff;
+  padding-top: 6px;
+  margin-bottom: 6px;
 }
