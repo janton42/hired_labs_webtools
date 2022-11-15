@@ -8,6 +8,7 @@ UploadFileForm
 
 from .models import Location, Setting, Profile, ResumeUpload
 
+from .scripts.resume_parser import do_something
 # Home page (home) and Registration page (register) are the only pages
 # accessible without a login.
 
@@ -86,3 +87,15 @@ def upload_resume(request):
         form = UploadFileForm()
     context = { 'form': form }
     return render(request, 'resume_upload.html', context)
+
+@login_required
+def parsed_resume(request, resume_id):
+    resume = ResumeUpload.objects.all()\
+    .filter(id=resume_id)\
+    .values()
+    for r in resume:
+        do_something(r['resume'])
+    context = {
+        'resume': resume
+    }
+    return render(request, 'parsed.html', context)
