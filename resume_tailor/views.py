@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.conf import settings
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 
@@ -8,7 +9,7 @@ UploadFileForm
 
 from .models import Location, Setting, Profile, ResumeUpload
 
-from .scripts.resume_parser import do_something
+from .packages.resume_parser.main import ResumeParser
 # Home page (home) and Registration page (register) are the only pages
 # accessible without a login.
 
@@ -94,7 +95,16 @@ def parsed_resume(request, resume_id):
     .filter(id=resume_id)\
     .values()
     for r in resume:
-        do_something(r['resume'])
+        # Initialize a parcer instance named after the current user
+        parser = ResumeParser(name=request.user)
+        # Make a folder for this user, if one doesn't already exist,
+        # get the full path to the selected resume file to be parsed,
+        # and get the uploaded file's extension
+        parser.get_resume_paths(r['resume'])
+        # Print out the instance attributes
+        parser.introduce_self()
+
+
     context = {
         'resume': resume
     }

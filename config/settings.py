@@ -21,6 +21,10 @@ env.read_env(env_file='config/.env')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+RESUME_OUT_PATH =os.path.join(BASE_DIR,\
+ 'resume_tailor/packages/resume_parser/output/')
+ML_MODELS_PATH = os.path.join(BASE_DIR,\
+ 'resume_tailor/packages/resume_parser/final_models/')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
