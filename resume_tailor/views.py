@@ -101,8 +101,9 @@ def parsed_resume(request, resume_id):
         # get the full path to the selected resume file to be parsed,
         # and get the uploaded file's extension
         parser.get_resume_paths(r['resume'])
-        # Print out the instance attributes
-        parser.introduce_self()
+        # Print instance attributes out to the consol
+        # parser.introduce_self()
+        parser.text_compiler()
 
 
     context = {

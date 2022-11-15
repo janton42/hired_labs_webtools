@@ -152,6 +152,7 @@ soupsieve==2.3.2.post1
 sqlparse==0.4.3
 stack-data==0.5.1
 statsmodels==0.13.2
+striprtf==0.0.21
 systemd-python==234
 tenacity==8.0.1
 terminado==0.16.0
@@ -162,7 +163,7 @@ tornado==6.2
 tqdm==4.64.1
 traitlets==5.5.0
 typing-extensions==4.4.0
-ubuntu-advantage-tools==27.11.2
+ubuntu-advantage-tools==27.11.3
 ubuntu-drivers-common==0.0.0
 ufw==0.36
 unattended-upgrades==0.1

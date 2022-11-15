@@ -10,6 +10,7 @@ from datetime import datetime
 from django.conf import settings
 from pathlib import Path
 from pdfminer.high_level import extract_text
+from striprtf.striprtf import rtf_to_text
 
 from .cleaner import create_features
 from .messages import messages
@@ -26,7 +27,7 @@ class ResumeParser(object):
 	def get_resume_paths(self, resume_file: str)-> str:
 
 		self.resume_out_path = os.path.join(settings.RESUME_OUT_PATH,\
-		 self.name)
+		 self.name + '/')
 
 		os.makedirs(self.resume_out_path, exist_ok=True)
 		self.resume_in_path = os.path.join(settings.BASE_DIR, resume_file)
@@ -48,58 +49,33 @@ class ResumeParser(object):
 		self.resume_out_path,\
 		self.resume_file_ext))
 
-	def text_compiler(folder: str, src: str, file_ex: str):
-	    '''
-	    Returns the 'out.csv' file in the output directory.
+	def text_compiler(self):
+		if self.resume_file_ext == 'pdf':
+			text = extract_text(self.resume_in_path)
+		elif self.resume_file_ext == 'rtf':
+			with open(self.resume_in_path, 'r') as file:
+				content = file.read()
+				text = rtf_to_text(content)
+		elif self.resume_file_ext == 'txt':
+			with open(self.resume_in_path, 'r') as file:
+				text = file.read()
+		#TODO: other file types (docx, odx, etc)
+		# print(text)
+		# Write resume out as a plain text doc, regardless of input type,
+		# with a standardized name.
+		resume_text_filename = self.resume_out_path + self.name + '_resume.txt'
+		with open(resume_text_filename, 'w') as f:
+			f.write(text)
 
-	    Takes in a file path as a string, finds all .txt files in that
-	    location, writes each line of them to a .csv file in the ./output/
-	    directory
-
-	    parameters:
-	        folder = string representing a path to a folder with .txt files
-	        src = string
-	    returns:
-	        .csv file
-	        prints a success message
-	    '''
-	    files = os.listdir(path=folder)
-	    paths = [folder + filename for filename in files if file_ex in filename]
-	    if file_ex == '.txt':
-	        data_frames = [pd.read_table(
-	            file,
-	            header=None,
-	            on_bad_lines='skip',
-	            skip_blank_lines=True,
-	            # encoding='unicode_escape',
-	            # encoding_errors='replace',
-	            lineterminator='\n'
-	            ) for file in paths]
-	        big_df = pd.concat(data_frames, axis=0)
-	        os.makedirs('./output', exist_ok=True)
-	        big_df.to_csv(
-	            './output/{}_out.csv'.format(src),
-	            header=['line']
-	            )
-	    elif file_ex == '.json':
-	        companies = list()
-	        for file in paths:
-	            with open(file) as f:
-	                company = json.load(f)
-	                try:
-	                    name = company['entityName']
-	                except KeyError as e:
-	                    print(e)
-	                    name = 'none'
-	                companies.append(name)
-	        company_df = pd.DataFrame(companies)
-	        os.makedirs('./output', exist_ok=True)
-	        company_df.to_csv(
-	            './output/{}_out.csv'.format(src),
-	            header = ['company']
-	        )
-
-	    print('complete')
+		df = pd.read_table(
+			resume_text_filename,
+			header=None,
+			on_bad_lines='skip',
+			skip_blank_lines=True,
+			lineterminator='\n'
+			)
+		raw_filename = self.resume_out_path + self.name + '_out.csv'
+		df.to_csv(raw_filename, header=['line'])
 
 	def clean_text(input: str):
 	    '''
