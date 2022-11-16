@@ -40,7 +40,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # For production
 DEBUG = False
-ALLOWED_HOSTS = ['www.hiredlabs.org']
+# ALLOWED_HOSTS = ['www.hiredlabs.org']
 
 
 # Application definition
@@ -147,7 +147,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 
-Comment out the lines below for dev, uncomment them in prod
+# Comment out the lines below for dev, uncomment them in prod
 SECURE_HSTS_SECONDS = 25
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
