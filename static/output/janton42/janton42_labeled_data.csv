@@ -1,672 +1,71 @@
 ,line,is_bullet,is_name,is_org
-0,OCS ,0,0,1
-1,RESUMES & ,0,0,0
-2,COVER LETTERS ,0,0,0
-3,Undergraduate Resource Series ,0,0,0
-4,Office of Career Services | 54 Dunster Street ,1,0,0
-5,Harvard University | Faculty of Arts and Sciences ,0,0,0
-6,ocsrecep@fas.harvard.edu | www.ocs.fas.harvard.edu ,0,0,0
-7,© 2021 President and Fellows of Harvard College ,0,0,0
-8,All rights reserved. ,0,0,1
-9,No  part  of  this  publication  may  be  reproduced  in  any  way  without  the  express  written ,1,0,0
-10,permission of the Harvard University Faculty of Arts & Sciences Office of Career Services. ,0,0,0
-11,07/21 ,0,0,0
-12,Office of Career Services ,0,0,0
-13,Harvard University Faculty ,0,0,0
-14,of Arts & Sciences ,1,0,0
-15,"Cambridge, MA 02138 ",0,0,0
-16,ocsrecep@fas.harvard.edu ,0,0,0
-17,www.ocs.fas.harvard.edu ,0,0,0
-18,RESUMES  AND  COVER  LETTERS  ,0,0,0
-19,Create a Strong Resume ,1,0,1
-20,A ,0,0,1
-21,"resume  is  a  concise,  informative  summary ",1,0,0
-22,"of your abilities, education, and experience. ",1,0,0
-23,"It should highlight your strongest assets and skills, ",1,0,0
-24,and differentiate you from other candidates seek- ,1,0,0
-25,ing similar positions. Although it alone will not get ,1,0,0
-26,"you a job or internship, a good resume is an impor- ",0,0,0
-27,tant element toward obtaining an interview. ,1,0,0
-28,Tailor  your  resume  to  the  type      of      position ,1,0,0
-29,you  are  seeking.  This  doesn’t  mean  that  all  of ,0,0,0
-30,"your  experiences  must  relate  directly,  but  your ",1,0,0
-31,resume  should  reflect  the  kind  of  skills  the ,1,0,0
-32,employer would value. ,0,0,1
-33,GETTING STARTED ,0,0,0
-34,•  Draft a resume using one of the templates on the OCS website. ,1,0,0
-35,•  Attend a Resume Workshop to learn the nuts and bolts of getting ,1,0,0
-36,started. See the OCS website for dates. ,1,0,0
-37,•  View the OCS Recorded Resume Webinar available on our website. ,1,0,0
-38,"•  Get advice via drop-ins. Monday-Friday, 1:00-4:00pm - ask quick ",0,0,0
-39,career-related questions and have an adviser review your resume. ,1,0,0
-40,"•  Look for industry specific resume review clinics, listed on the ",1,0,0
-41,Employer and Graduate School Calendar. ,0,0,0
-42,RESUME TIPS ,0,0,0
-43,TOP 6 RESUME MISTAKES: ,0,0,0
-44,RESUME LANGUAGE SHOULD BE: ,0,0,0
-45,• Specific rather than general ,0,0,0
-46,• Active rather than passive ,0,0,0
-47,• Written to express not impress ,1,0,0
-48,• Articulate rather than “flowery” ,1,0,0
-49,• Fact-based (quantify and qualify) ,1,0,0
-50,• Written for people who scan quickly ,1,0,0
-51,DON’T: ,0,0,0
-52,• Use personal pronouns (such as I) ,1,0,1
-53,• Abbreviate ,0,0,0
-54,• Use a narrative style ,0,0,0
-55,• Use slang or colloquialisms ,0,0,0
-56,• Include a picture ,1,0,1
-57,• Include age or gender ,0,0,0
-58,• List references ,0,0,0
-59,• Start each line with a date ,0,0,0
-60,1.  Spelling and grammar errors ,1,0,0
-61,2.  Missing email and phone information ,1,0,0
-62,3.  Using passive language instead of “action” words ,1,0,0
-63,"4.  Not well organized, concise, or easy to skim ",1,0,0
-64,5.  Not demonstrating results ,1,0,1
-65,6.  Too long ,0,0,0
-66,DO: ,0,0,1
-67,• Be consistent in format and content ,1,0,0
-68,"• Make it easy to read and follow, balancing white ",1,0,0
-69,space ,0,0,0
-70,"• Use consistent spacing, underlining, italics, bold, ",0,0,0
-71,and capitalization for emphasis ,0,0,0
-72,• List headings (such as Experience) in order of ,1,0,0
-73,importance ,0,0,0
-74,"• Within headings, list information in reverse chron- ",1,0,0
-75,ological order (most recent first) ,1,0,0
-76,• Avoid information gaps such as a missing summer ,1,0,0
-77,• Be sure that your formatting will translate properly ,1,0,0
-78,if converted to a .pdf ,0,0,0
-79,PLAN TO WORK INTERNATIONALLY? ,0,0,0
-80,Resume guidelines can vary from country to country. See our ,1,0,0
-81,international resources at ocs.fas.harvard.edu/online-tools ,1,0,0
-82,RESUMES  AND  COVER  LETTERS  ,0,0,0
-83,Action Verbs for your Resume ,0,0,0
-84,LEADERSHIP ,0,0,0
-85,Accomplished    Achieved ,0,0,0
-86,Administered    Analyzed ,0,0,0
-87,Contracted ,0,0,0
-88,Coordinated      Delegated ,0,0,1
-89,Developed ,0,0,0
-90,Handled ,0,0,0
-91,Headed ,0,0,0
-92,Impacted ,0,0,0
-93,Improved ,0,0,0
-94,Assigned ,0,0,0
-95,Directed ,0,0,0
-96,Increased ,0,0,0
-97,Attained ,0,0,0
-98,Earned ,0,0,0
-99,Led ,0,0,1
-100,Chaired ,0,0,0
-101,Consolidated ,0,0,0
-102,Evaluated ,0,0,0
-103,Executed ,0,0,0
-104,Mastered ,0,0,0
-105,Orchestrated ,0,0,0
-106,Organized ,0,0,0
-107,Oversaw ,0,0,0
-108,Planned ,0,0,0
-109,Predicted ,0,0,0
-110,Prioritized ,0,0,0
-111,Produced ,0,0,0
-112,Proved ,0,0,0
-113,Recommended ,0,0,0
-114,Regulated ,0,0,0
-115,Reorganized      Reviewed ,0,0,1
-116,Scheduled ,0,0,0
-117,Spearheaded ,0,0,0
-118,Strengthened ,0,0,0
-119,Supervised ,0,0,0
-120,Surpassed ,0,0,0
-121,COMMUNICATION ,0,0,0
-122,Addressed ,0,0,0
-123,Arbitrated ,0,0,0
-124,Arranged ,0,0,0
-125,Authored ,0,0,0
-126,Collaborated ,0,0,0
-127,Convinced ,0,0,0
-128,Corresponded Delivered ,0,0,0
-129,Developed ,0,0,0
-130,Directed ,0,0,0
-131,Documented      Drafted ,0,0,1
-132,Edited ,0,0,0
-133,Energized ,0,0,0
-134,Enlisted ,0,0,0
-135,Formulated ,0,0,0
-136,Influenced ,0,0,0
-137,Interpreted ,0,0,0
-138,Lectured ,0,0,0
-139,Liaised ,0,0,0
-140,Mediated ,0,0,0
-141,Moderated ,0,0,0
-142,Negotiated ,0,0,0
-143,Persuaded ,0,0,0
-144,Presented ,0,0,0
-145,Promoted ,0,0,0
-146,Publicized ,0,0,0
-147,Reconciled ,0,0,0
-148,Recruited ,0,0,0
-149,Reported ,0,0,0
-150,Rewrote ,0,0,0
-151,Spoke ,0,0,0
-152,Suggested ,0,0,0
-153,Synthesized ,0,0,0
-154,Translated ,0,0,0
-155,Verbalized ,0,0,0
-156,Wrote ,0,0,0
-157,RESEARCH ,0,0,0
-158,Clarified ,0,0,0
-159,Collected ,0,0,0
-160,Concluded ,0,0,0
-161,Conducted ,0,0,0
-162,Constructed ,0,0,0
-163,Critiqued ,0,0,0
-164,Derived ,0,0,0
-165,Determined ,0,0,0
-166,Diagnosed ,0,0,0
-167,Discovered ,0,0,0
-168,Evaluated ,0,0,0
-169,Examined ,0,0,0
-170,Extracted ,0,0,0
-171,Interpreted ,0,0,0
-172,Interviewed ,0,0,0
-173,Investigated  Modeled ,0,0,1
-174,Organized ,0,0,0
-175,Formed ,0,0,0
-176,Resolved ,0,0,0
-177,Identified ,0,0,0
-178,Inspected ,0,0,0
-179,Reviewed ,0,0,0
-180,Summarized ,0,0,0
-181,Surveyed ,0,0,0
-182,Systematized    Tested ,0,0,1
-183,TECHNICAL ,0,0,0
-184,Assembled ,0,0,0
-185,Built ,0,0,0
-186,Calculated ,0,0,0
-187,Computed ,0,0,0
-188,Designed ,0,0,0
-189,Devised ,0,0,0
-190,Engineered ,0,0,0
-191,Fabricated ,0,0,0
-192,Installed ,0,0,0
-193,Maintained  Operated ,0,0,1
-194,Optimized ,0,0,0
-195,Overhauled ,0,0,0
-196,Programmed  Remodeled ,0,0,0
-197,Repaired ,0,0,0
-198,Solved ,0,0,0
-199,Standardized    Streamlined  Upgraded ,0,0,0
-200,TEACHING ,0,0,0
-201,Adapted ,0,0,0
-202,Enabled ,0,0,0
-203,Advised ,0,0,0
-204,Clarified ,0,0,0
-205,Coached ,0,0,0
-206,Communicated  Coordinated  Demystified  Developed ,0,0,0
-207,Encouraged      Evaluated ,0,0,1
-208,Explained ,0,0,0
-209,Facilitated ,0,0,0
-210,Persuaded ,0,0,0
-211,Set Goals ,0,0,1
-212,Stimulated         Studied ,0,0,1
-213,Taught ,0,0,0
-214,Guided ,0,0,0
-215,Trained ,0,0,0
-216,Informed ,0,0,0
-217,Instructed ,0,0,0
-218,QUANTITATIVE ,0,0,0
-219,Administered      Allocated ,0,0,0
-220,Analyzed ,0,0,0
-221,Appraised ,0,0,0
-222,Audited ,0,0,0
-223,Balanced ,0,0,0
-224,Budgeted ,0,0,0
-225,Calculated ,0,0,0
-226,Computed ,0,0,0
-227,Developed ,0,0,0
-228,Forecasted ,0,0,0
-229,Managed ,0,0,0
-230,Marketed ,0,0,0
-231,Maximized ,0,0,0
-232,Minimized ,0,0,0
-233,Planned ,0,0,0
-234,Projected ,0,0,0
-235,Researched ,0,0,0
-236,CREATIVE ,0,0,0
-237,Acted ,0,0,0
-238,Composed ,0,0,0
-239,Conceived ,0,0,0
-240,Conceptualized    Created ,0,0,0
-241,Customized ,0,0,0
-242,Designed ,0,0,0
-243,Developed ,0,0,0
-244,Directed ,0,0,0
-245,Established ,0,0,0
-246,Fashioned ,0,0,0
-247,Founded ,0,0,0
-248,Illustrated ,0,0,0
-249,Initiated ,0,0,0
-250,Instituted ,0,0,0
-251,Integrated ,0,0,0
-252,Introduced ,0,0,0
-253,Invented ,0,0,0
-254,Originated ,0,0,0
-255,Performed ,0,0,0
-256,Planned ,0,0,0
-257,Published ,0,0,0
-258,Redesigned ,0,0,0
-259,Revised ,0,0,0
-260,Revitalized ,0,0,0
-261,Shaped ,0,0,0
-262,Visualized ,0,0,0
-263,HELPING ,0,0,0
-264,Assessed ,0,0,0
-265,Assisted ,0,0,0
-266,Clarified ,0,0,0
-267,Coached ,0,0,0
-268,Counseled ,0,0,0
-269,Demonstrated  Diagnosed ,0,0,1
-270,Educated ,0,0,0
-271,Enhanced ,0,0,0
-272,Expedited         Facilitated         Familiarized         Guided ,0,0,0
-273,Motivated ,0,0,0
-274,Participated ,0,0,0
-275,Proposed ,0,0,0
-276,Provided ,0,0,0
-277,Referred ,0,0,0
-278,Rehabilitated     Represented          Served ,0,0,0
-279,Supported ,0,0,0
-280,ORGANIZATIONAL ,0,0,0
-281,Approved ,0,0,0
-282,Accelerated  Added ,0,0,0
-283,Arranged ,0,0,0
-284,Broadened ,0,0,0
-285,Cataloged ,0,0,0
-286,Centralized ,0,0,0
-287,Changed ,0,0,0
-288,Classified ,0,0,0
-289,Collected ,0,0,0
-290,Compiled ,0,0,0
-291,Completed ,0,0,0
-292,Controlled ,0,0,0
-293,Defined ,0,0,0
-294,Dispatched ,0,0,0
-295,Executed ,0,0,0
-296,Expanded ,0,0,0
-297,Gained ,0,0,0
-298,Gathered ,0,0,0
-299,Generated ,0,0,0
-300,Implemented ,0,0,0
-301,Inspected ,0,0,0
-302,Launched ,0,0,0
-303,Monitored ,0,0,0
-304,Operated ,0,0,0
-305,Retrieved ,0,0,0
-306,Organized ,0,0,0
-307,Prepared ,0,0,0
-308,Processed ,0,0,0
-309,Purchased ,0,0,0
-310,Recorded ,0,0,0
-311,Reduced ,0,0,0
-312,Reinforced ,0,0,0
-313,Screened ,0,0,0
-314,Selected ,0,0,0
-315,Simplified ,0,0,0
-316,Sold                        Specified              Steered                Structured ,0,0,0
-317,Systematized      Tabulated        Unified              Updated                Utilized                  Validated              Verified ,0,0,0
-318,Always use your @college email ,1,0,0
-319,"account and check it frequently, even ",1,0,0
-320,if you have enabled forwarding. ,0,0,0
-321,RESUMES  AND  COVER  LETTERS  ,0,0,0
-322,Resume Sample ,0,0,0
-323,Firstname Lastname ,0,0,0
-324,If an employer asks for your SAT/ ,1,0,0
-325,"ACT scores or GPA, include in ",1,0,0
-326,your Education section. ,1,0,0
-327,"17 Main Street • Los Angeles, CA 92720 • youremail@college.harvard.edu • (714) 558-9857 ",0,0,0
-328,HARVARD UNIVERSITY ,0,0,0
-329,A.B. Honors degree in History. GPA 3.73. ,1,0,0
-330,Relevant Coursework: International Political Economics and the European Community. ,0,0,0
-331,Commit 25 hours per week to Harvard Varsity Field Hockey Program. ,0,0,0
-332,Education ,0,0,0
-333,UNIVERSITY OF LONDON ,0,0,0
-334,Study abroad coursework in European History and Econometrics. ,1,0,0
-335,"Cambridge, MA ",0,0,0
-336,May 2022 ,0,0,0
-337,"London, UK ",0,0,0
-338,May - August 2020 ,0,0,0
-339,LOS ANGELES HIGH SCHOOL ,0,0,0
-340,Graduated with high honors.  SAT I: M:780 V:760. ,1,0,0
-341,National Honor Society. Member of Varsity Field Hockey Team. ,0,0,0
-342,"If including coursework, be sure it’s ",1,0,0
-343,relevant to the position to which ,0,0,0
-344,you’re applying. ,0,0,0
-345,"Los Angeles, CA ",0,0,0
-346,June 2018 ,0,0,0
-347,Experience ,0,0,0
-348,Use different verbs. ,0,0,0
-349,PEPSI-COLA NORTH AMERICA BEVERAGES ,0,0,0
-350,Marketing Analyst Intern ,0,0,0
-351,Examined profitability of foreign market for new fruit drink using analysis of comparable brands. Managed focus groups ,1,0,0
-352,and consumer surveys gathering over 500 data points. Created ideas for niche marketing campaigns including use of ,1,0,0
-353,social networks and viral marketing. Presented findings to senior managers using quantitative analysis and creative visuals ,1,0,0
-354,in combined PowerPoint presentation. ,0,0,0
-355,May - August 2021 ,0,0,0
-356,Remote      ,0,0,0
-357,THOMAS WILCK ASSOCIATES ,0,0,0
-358,Assistant Account Executive ,0,0,0
-359,Researched  and  assembled  requests  for  proposals  for  medium-sized  public  relations  and  communications  firm. Actively ,1,0,0
-360,participated in staff meetings and brainstorming sessions. Generated correspondence with top executive officers. ,1,0,0
-361,"London, UK ",0,0,0
-362,May - August 2020 ,0,0,0
-363,TECH HILLS ,0,0,0
-364,Technology Intern ,0,0,0
-365,"Implemented new web site, including back end database storage system and dynamic web pages. ",1,0,0
-366,Note that relevant interests and skills can be ,1,0,0
-367,demonstrated through campus and volunteer ,1,0,0
-368,activities as well as through previous employment. ,1,0,0
-369,"Laguna Hills, CA ",0,0,0
-370,May - August 2019 ,0,0,0
-371,"Cambridge, MA ",0,0,0
-372,HARVARD UNDERGRADUATE WOMEN IN BUSINESS (WIB) ,0,0,0
-373,February 2019 - Present ,0,0,0
-374,Executive Committee Member ,0,0,0
-375,Organized marketing and advertising campaign to increase membership. Coordinated business conference and networking ,1,0,0
-376,reception for 50 business professionals and 500 students. ,1,0,0
-377,Leadership ,0,0,0
-378,HARVARD COLLEGE MARATHON CHALLENGE ,0,0,0
-379,Training Program Director ,0,0,0
-380,"Developed training program for 25 charity runners. Raised over $25,000 to support Phillips Brooks House Association ",1,0,0
-381,and The Cambridge Food Project. ,0,0,0
-382,"Cambridge, MA ",0,0,0
-383,January - May 2019 ,0,0,0
-384,Skills & Interests ,0,0,0
-385,"Technical: Microsoft Excel and Access, Stata, SQL, Java and HTML. ",0,0,0
-386,Language: Fluent French and Conversational Spanish. ,0,0,0
-387,"Interests: Ultimate Frisbee, Bhangra dance, and European films. ",1,0,0
-388,Be consistent presenting data. Use ,1,0,0
-389,either numerals or words but not both. ,0,0,1
-390,RESUMES  AND  COVER  LETTERS  ,0,0,0
-391,Optional  category  examples ,0,0,1
-392,You may wish to adopt these categories if relevant to your experience or the opportunity you are applying for. If you have ,1,0,0
-393,"significant experience in a specialized category, consider using that as your primary “Experience” section. Both paragraph ",1,0,0
-394,"and bulleted formats are options, but be consistent with the formatting within your resume. Students in creative and ",1,0,0
-395,"performing arts can develop resumes, portfolios, and websites to support their specific job search. OCS advisers can help! ",1,0,0
-396,Leadership Experience ,0,0,1
-397,HARVARD SOCIETY OF BLACK SCIENTISTS & ENGINEERS ,0,0,0
-398,President ,0,0,0
-399,Provided strategic direction and developed annual goals for this 90 member student group. Organized board and general ,1,0,0
-400,"meetings. Oversaw existing activities, programs, and collaborations with other student organizations. Represented group in ",1,0,0
-401,Black Community Leaders Organization. ,0,0,0
-402,"Cambridge, MA ",0,0,0
-403,September 2020 - May 2021 ,0,0,0
-404,"Cambridge, MA ",0,0,0
-405,HARVARD COMPUTER SOCIETY ,0,0,0
-406,Membership Coordinator / Board Member                                                                                                   January – May 2020 ,0,0,0
-407," Organized marketing and advertising campaign, resulting in 20% increase in membership. Coordinated tech conference and ",1,0,0
-408,networking reception for 30 professionals and 75 students. Upgraded and enhanced website. ,1,0,0
-409,CAMBRIDGE DEPARTMENT OF SOCIAL SERVICES ,0,0,0
-410,Intern ,0,0,0
-411,"Cambridge, MA ",0,0,0
-412,September 2019 – Present ,0,0,0
-413,•  Conduct site visits to local social service agencies to assist in evaluating effectiveness of service delivery. Observe ,1,0,0
-414,Public Service Experience ,0,0,0
-415,experienced counselors and social workers in private settings with clients. ,1,0,0
-416,•  Analyze data to determine trends in service usage. ,1,0,0
-417,PHILLIPS BROOKS HOUSE ASSOCIATION ,0,0,0
-418,Summer Urban Program Senior Counselor ,0,0,0
-419,"Dorchester, MA ",0,0,0
-420,June – August 2020 ,0,0,0
-421,•  Organized activities at summer camp encouraging academic achievement among inner city and under-resourced ,1,0,0
-422,children. Managed $500 activities budget. ,1,0,1
-423,"•  Produced and implemented curriculum for girls ages 11-12 exposing campers to female leaders in community, ",1,0,0
-424,"community service, and health education. ",1,0,0
-425,"Programming: C++, SQL, R, Perl, Python, MATLAB, Java, OCaml.  ",0,0,0
-426,"Operating Systems: Windows, MAC OS, and Linux. ",1,0,0
-427,"Web Design: Designed www.abc.com, www.xyz.com ",0,0,0
-428,Technical Skills ,0,0,1
-429,STANFORD NANOTECH RESEARCH CENTER ,0,0,0
-430,Research Intern ,0,0,0
-431,Project: Microfabrication of Thin-film Heaters to Simulate Hotspots. ,0,0,0
-432,Research Experience ,0,0,1
-433,"Palo Alto, CA ",0,0,0
-434,June – August 2020 ,0,0,0
-435,•  Fabricated devices for testing effectiveness of nanoscale patch used to cool down hotspots on microprocessors. ,1,0,0
-436,•  Utilized cleanroom facilities to create devices with hotspot heater and temperature sensors to simulate heat generation. ,1,0,0
-437,Performing Arts Experience ,0,0,1
-438,MAINLY JAZZ DANCE COMPANY ,0,0,0
-439,Dancer / Choreographer ,0,0,0
-440,"Perform traditional jazz, lyrical, hip hop, funk, and modern dance at performances open to public throughout the year. Teach ",1,0,0
-441,dance routines weekly to 20+ students at local elementary school. ,1,0,0
-442,"Cambridge, MA ",0,0,0
-443,October 2019 – Present ,0,0,0
-444,LOWELL HOUSE COMMITTEE ,0,0,0
-445,Member. Collaborate on social and community service activities. ,1,0,0
-446,Activities ,0,0,0
-447,MASSACHUSETTS GENERAL HOSPITAL ,0,0,0
-448,Hospital Volunteer. Commit 5 hours per week greeting patients. ,0,0,0
-449,"Cambridge, MA ",0,0,0
-450,September 2019 – Present ,0,0,0
-451,"Boston, MA ",0,0,0
-452,January – May 2020 ,0,0,0
-453,RESUMES  AND  COVER  LETTERS  ,0,0,0
-454,Resume Template I (with bullet points) ,1,0,0
-455,Firstname Lastname ,0,0,0
-456,"Home Street Address • City, State Zip • youremail@college.harvard.edu • phone number ",0,0,0
-457,HARVARD UNIVERSITY ,0,0,0
-458,"Degree, Concentration. GPA [Note: Optional] ",0,0,0
-459,Thesis [Note: Optional] ,0,0,1
-460,Relevant Coursework: [Note: Optional. Awards and honors can also be listed here.] ,1,0,0
-461,Education ,0,0,0
-462,"Cambridge, MA ",0,0,0
-463,Graduation Date ,0,0,0
-464,STUDY ABROAD [Note: If Applicable] ,0,0,0
-465,Study abroad coursework in ,0,0,0
-466,. ,0,0,1
-467,"City, Country ",0,0,0
-468,Month Year – Month Year ,0,0,0
-469,NAME OF HIGH SCHOOL ,0,0,0
-470,"[Note: May include GPA, SAT/ACT scores, or academic honors an employer may want to know] ",1,0,0
-471,"City, State ",0,0,0
-472,Graduation Date ,0,0,0
-473,ORGANIZATION ,0,0,0
-474,Position Title ,0,0,1
-475,Experience ,0,0,0
-476,"City, State (or Remote) ",0,0,0
-477,"City, State ",0,0,0
-478,Month Year – Month Year ,0,0,0
-479,"•  Beginning with your most recent position, describe your experience, skills, and resulting outcomes in bullet or ",1,0,0
-480,paragraph form. ,0,0,1
-481,"•  Begin each line with an action verb and include details that will help the reader understand your accomplishments, ",1,0,0
-482,"skills, knowledge, abilities, or achievements. ",1,0,0
-483,•  Quantify where possible. ,0,0,0
-484,•  Do not use personal pronouns; each line should be a phrase rather than a full sentence. ,1,0,0
-485,ORGANIZATION ,0,0,0
-486,Position Title ,0,0,1
-487,"City, State ",0,0,0
-488,Month Year – Month Year ,0,0,0
-489,"•  With your next-most recent position, describe your experience, skills, and resulting outcomes in bullet or ",1,0,0
-490,paragraph form. ,0,0,1
-491,"•  Begin each line with an action verb and include details that will help the reader understand your accomplishments, ",1,0,0
-492,"skills, knowledge, abilities, or achievements. ",1,0,0
-493,•  Quantify where possible. ,0,0,0
-494,•  Do not use personal pronouns; each line should be a phrase rather than a full sentence. ,1,0,0
-495,ORGANIZATION ,0,0,0
-496,Role ,0,0,0
-497,Leadership & Activities ,0,0,0
-498,"City, State ",0,0,0
-499,Month Year – Month Year ,0,0,0
-500,"•  This section can be formatted similarly to the Experience section, or you can omit descriptions for activities. ",1,0,0
-501,• ,0,0,1
-502,"If this section is more relevant to the opportunity you are applying for, consider moving this above your ",1,0,0
-503,Experience section. ,0,0,1
-504,Skills & Interests [Note: Optional] ,0,0,0
-505,Technical: List computer software and programming languages ,1,0,0
-506,Language: List foreign languages and your level of fluency ,1,0,0
-507,Laboratory:  List  scientific  /  research  lab  techniques  or  tools  [If Applicable] ,1,0,0
-508,Interests: List activities you enjoy that may spark interview conversation ,1,0,0
-509,"To help you design a strong resume, OCS offers formatted templates. On the OCS website, ",1,0,0
-510,search “templates” and click on OCS Guides and Templates. Choose bulleted or paragraph ,1,0,0
-511,"style, fill in your information, and then bring your draft to drop-ins for editing and feedback. ",1,0,0
-512,RESUMES  AND  COVER  LETTERS  ,0,0,0
-513,Resume Template II (paragraph format) ,0,0,0
-514,Firstname Lastname ,0,0,0
-515,"Home Street Address • City, State Zip • youremail@college.harvard.edu • phone number ",0,0,0
-516,HARVARD UNIVERSITY ,0,0,0
-517,"Degree, Concentration. GPA [Note: Optional] ",0,0,0
-518,Relevant Coursework or Thesis: [Note: Optional. Awards and honors can also be listed here.] ,1,0,0
-519,"Cambridge, MA ",0,0,0
-520,Graduation Date ,0,0,0
-521,Education ,0,0,0
-522,STUDY ABROAD [Note: If Applicable] ,0,0,0
-523,Study abroad coursework in ,0,0,0
-524,. ,0,0,1
-525,"City, Country ",0,0,0
-526,Month Year – Month Year ,0,0,0
-527,NAME OF HIGH SCHOOL ,0,0,0
-528,"[May include GPA, SAT scores, or academic honors an employer may want to know] ",1,0,0
-529,"City, State ",0,0,0
-530,Graduation Date ,0,0,0
-531,Experience ,0,0,0
-532,ORGANIZATION ,0,0,0
-533,Position Title ,0,0,1
-534,"Beginning with your most recent position, describe your experience, skills, and resulting outcomes in bullet or ",1,0,0
-535,paragraph form. [Note: Begin each line with an action verb and include details that will help the reader understand your ,1,0,0
-536,"accomplishments, skills, knowledge, abilities, or achievements. Quantify where possible. Do not use personal pronouns; ",1,0,0
-537,each line should be a phrase rather than a full sentence.] ,0,0,0
-538,"City, State (or Remote) ",0,0,0
-539,"City, State ",0,0,0
-540,Month Year – Month Year ,0,0,0
-541,"City, State ",0,0,0
-542,ORGANIZATION ,0,0,0
-543,Month Year – Month Year ,0,0,0
-544,Position Title ,0,0,1
-545,"With your next-most recent position, describe your experience, skills, and resulting outcomes in bullet or paragraph form. ",1,0,0
-546,"[Note: Begin each line with an action verb and include details that will help the reader understand your accomplishments, ",1,0,0
-547,"skills, knowledge, abilities, or achievements. Quantify where possible. Do not use personal pronouns; each line should be ",1,0,0
-548,a phrase rather than a full sentence. Avoiding the use of articles can make your descriptions flow more smoothly.] ,1,0,0
-549,"City, State ",0,0,0
-550,ORGANIZATION ,0,0,0
-551,Month Year – Month Year ,0,0,0
-552,Role ,0,0,0
-553,"[Note: This section can be formatted similarly to the Experience section, or you can omit descriptions for activities. If this ",1,0,0
-554,"section is more relevant to the opportunity you are applying for, consider moving this above your Experience section.] ",1,0,0
-555,Leadership & Activities ,0,0,0
-556,"City, State ",0,0,0
-557,ORGANIZATION ,0,0,0
-558,Month Year – Month Year ,0,0,0
-559,Role ,0,0,0
-560,"[Note: This section can be formatted similarly to the Experience section, or you can omit descriptions for activities. If this ",1,0,0
-561,"section is more relevant to the opportunity you are applying for, consider moving this above your Experience section.] ",1,0,0
-562,Skills & Interests [Note: Optional] ,0,0,0
-563,Technical: List computer software and programming languages ,1,0,0
-564,Language: List foreign languages and your level of fluency ,1,0,0
-565,Laboratory:  List  scientific  /  research  lab  techniques  or  tools  [If Applicable] ,1,0,0
-566,Interests: List activities you enjoy that may spark interview conversation ,1,0,0
-567,RESUMES  AND  COVER  LETTERS  ,0,0,0
-568,Write an Effective Cover Letter ,0,0,0
-569,"Your  cover  letter  is  a  writing  sample  and  a  part  of  the  screening  process.  By  putting  your  best  foot  forward,  you  can  increase  your ",1,0,0
-570,chances of being interviewed. A good  way  to  create  a  response-producing  cover  letter  is  to  highlight  your  skills  or  experiences ,1,0,0
-571,that are most applicable to the job or industry and to tailor the letter to the specific organization to which you’re applying. ,0,0,0
-572,Use complete ,0,0,0
-573,title and address  ,1,0,0
-574,(street address is  ,1,0,0
-575,optional if space  ,1,0,0
-576,is limited). ,0,0,0
-577,Address to a ,0,0,1
-578,particular person ,0,0,1
-579,if possible and ,0,0,0
-580,remember to use ,0,0,0
-581,a colon. ,0,0,1
-582,Persuade the  ,0,0,0
-583,addressee to read  ,1,0,0
-584,your resume. ,0,0,0
-585,"Be brief, but  ",0,0,0
-586,specific. ,0,0,0
-587,Remind the ,0,0,1
-588,reader of what ,0,0,0
-589,you can do for ,0,0,0
-590,the organization. ,1,0,1
-591,Date of Letter ,0,0,0
-592,Contact Name ,0,0,1
-593,Contact Title ,0,0,0
-594,Company Name ,0,0,1
-595,Street Address ,0,0,0
-596,"City, State, Zip Code ",0,0,0
-597,Dear ,0,0,0
-598,: ,0,0,1
-599,"Opening paragraph: Clearly state why you’re writing, name the ",1,0,0
-600,"position or type of work you’re exploring and, where applicable, how ",1,0,0
-601,you heard about the position or organization. A summary statement ,1,0,0
-602,may work well here by including three reasons you think you would be ,1,0,0
-603,a good fit for the opportunity. ,1,0,1
-604,Middle paragraph(s): Explain why you are interested in this employer ,1,0,0
-605,and your reasons for desiring this type of work. If you’ve had relevant ,1,0,0
-606,"school or work experience, be sure to point it out with one or two key ",1,0,0
-607,examples; but do not reiterate your entire resume. Emphasize skills or ,1,0,0
-608,abilities that relate to the job. Be sure to do this in a confident manner ,1,0,0
-609,and remember that the reader will view your letter as an example of ,0,0,0
-610,your writing skills. ,1,0,0
-611,"Closing paragraph: Reiterate your interest in the position, and ",1,0,0
-612,your enthusiasm for using your skills to contribute to the work ,1,0,0
-613,of the organization. Thank the reader for their consideration of ,1,0,0
-614,"your application, and end by stating that you look forward to the ",0,0,0
-615,opportunity to further discuss the position. ,1,0,0
-616,"Sincerely, ",0,0,0
-617,Your name typed ,0,0,1
-618,Some general rules about letters: ,1,0,1
-619,• Address your letters to a specific person if you can. ,0,0,0
-620,• Tailor your letters to specific situations or organizations by ,1,0,0
-621,doing research before writing your letters. ,1,0,0
-622,"• Keep letters concise and factual, no more than a single page. ",1,0,0
-623,Avoid flowery language. ,0,0,0
-624,• Give examples that support your skills and qualifications. ,1,0,0
-625,• Put yourself in the reader’s shoes. What can you write that will ,1,0,0
-626,convince the reader that you are ready and able to do the job? ,0,0,0
-627,• Don’t overuse the pronoun “I”. ,1,0,0
-628,• Remember that this is a marketing tool. Use plenty of action ,1,0,0
-629,words. ,0,0,0
-630,• Have an OCS adviser provide feedback on your letter. ,1,0,0
-631,"• If converting to a .pdf, check that your formatting translates ",1,0,0
-632,correctly. ,0,0,0
-633,• Reference skills or experiences from the job description and ,1,0,0
-634,draw connections to your credentials. ,1,0,0
-635,• Make sure your resume and cover letter are prepared with the ,1,0,0
-636,same font type and size. ,0,0,0
-637,Sample Cover Letter ,0,0,0
-638,RESUMES  AND  COVER  LETTERS  ,0,0,0
-639,"September 1, 2021 ",0,0,0
-640,2019 ,0,0,0
-641,Morgan Smith ,0,0,0
-642,Director of Communications ,0,0,0
-643,Jumpstart ,0,0,0
-644,"308 Congress Street, 6th Floor ",0,0,0
-645,"Boston, MA 02110 ",0,0,0
-646,Dear Morgan Smith: ,0,0,0
-647,I am a senior at Harvard College studying History and Literature.  I am writing to apply for the ,1,0,0
-648,Marketing and Communications position at Jumpstart posted in Harvard’s Crimson Careers ,1,0,0
-649,"database.  I am excited about the field of education, and would welcome the opportunity to bring ",1,0,0
-650,"my strong communication skills, creativity, and marketing experience to your growing team. ",1,0,0
-651,Jumpstart's commitment to early education for every child is of particular interest to me because ,1,0,0
-652,"of my passion for youth development. This past summer, I worked as a senior counselor in the ",1,0,0
-653,"Summer Urban Program, which is dedicated to preventing summer learning loss for children in ",1,0,0
-654,"the Boston and Cambridge area. I designed and taught fun, interactive classes to a group of 10 ",1,0,0
-655,"fifth graders, and planned and led local field trips and workshops daily with a junior counselor. ",1,0,0
-656,"Throughout the summer, I consistently strived to create math, science, and reading lessons and ",1,0,0
-657,activities that were engaging and tailored to my students' needs. ,1,0,0
-658,"Additionally, in my role as the Director of Marketing for the Social Innovation Collaborative, I ",1,0,0
-659,led our team in creating a social media strategy to drive our member recruitment efforts and ,1,0,0
-660,"promote our programs and events on platforms including Facebook, Twitter, and Instagram. ",1,0,0
-661,"With so many competing events on campus each day, I had to continually be creative in my ",1,0,0
-662,approach to developing and delivering content that would be compelling and effective. As a ,1,0,0
-663,"result of my efforts, our group experienced a 20% increase in our membership base and a 15% ",1,0,0
-664,increase in our social media engagement. I’m excited at the prospect of bringing the skills I ,1,0,0
-665,developed through this experience to the Marketing and Communications role at Jumpstart. ,1,0,0
-666,Thank you for your consideration.  I very much look forward to the opportunity to speak with ,1,0,0
-667,you in person about my interest in this position. ,0,0,0
-668,"Sincerely, ",0,0,0
-669,Alex Crimson ,0,0,0
-670,,0,0,1
+0, Je,0,0,1
+1," Solutions professional, US Marine Corps Veteran, & UC Berkeley graduate ",0,0,0
+2," specializing in operational excellence, data analytics, compliance, team ",1,0,0
+3," leadership, and global contingent workforce management. ",1,0,0
+4, EXPERIENCE ,0,0,1
+5," Upwork Inc,  San Francisco, CA / Remote ",0,0,0
+6," Program Manager, Data Analytics & Operations ",0,0,0
+7, JANUARY 2020 - MAY 2022 ,0,0,0
+8," Led a team of analysts, program admins and processes auditors. ",1,0,0
+9," Designed and implemented processes for data handling, analysis and ",1,0,0
+10, reporting; daily operations; special projects; process and compliance ,1,0,0
+11, audits. ,0,0,1
+12," Conducted statistical analysis to provide actionable insights, trends, and ",1,0,0
+13, performance measurement. ,0,0,1
+14," San Mateo, CA ",0,0,0
+15, (707) 301-8624 ,0,0,0
+16, jantonstock@gmail.com ,0,0,0
+17, linkedin.com/in/stockj ,0,0,1
+18, github.com/janton42 ,0,0,1
+19, EDUCATION ,0,0,1
+20," University of California, ",0,0,0
+21, Berkeley ,0,0,0
+22, ● ,0,0,1
+23, BA:  Linguistics ,0,0,1
+24, Defense Language Institute ,0,0,0
+25, ● ,0,0,1
+26, ● ,0,0,1
+27, AA:  Russian Language ,0,0,1
+28, Russian Arms Control ,0,0,0
+29, Speaking Proﬁciency ,0,0,1
+30, Course ,0,0,1
+31," Associate Program Manager, Contingent Workforce ",0,0,0
+32, SKILLS ,0,0,1
+33,    Python (Intermediate) ,0,0,0
+34,    Javascript (Intermediate) ,0,0,0
+35, SQL (Basic) ,0,0,0
+36, Linux ,0,0,1
+37,    Looker ,0,0,1
+38,    Asana ,0,0,0
+39, LANGUAGES ,0,0,1
+40, Russian (Full Professional) ,0,0,0
+41, English (Native) ,0,0,0
+42, Spanish (Beginner) ,0,0,0
+43, Mandarin Chinese (Beginner) ,0,0,0
+44, AUGUST 2018 - DECEMBER 2019 ,0,0,0
+45," Managed service delivery, compliance & policy adherence, data analytics ",0,0,0
+46, and reporting for global contingent workforce program. ,1,0,0
+47, Increased operational e,0,0,1
+48," handling, communication, and document creation processes. ",1,0,0
+49, Reduced inbound support requests ~7% by designing and building ,1,0,0
+50, self-service information site for internal hiring managers using Google ,1,0,0
+51," (Sites, Docs, Forms, Sheets, Presentations, Apps Script). ",0,0,0
+52, Account Executive ,0,0,0
+53, DECEMBER 2017- AUGUST 2018 ,0,0,0
+54, Presented solutions and developed mutually beneﬁcial relationships with ,1,0,0
+55, key Fortune 500 clients by demonstrating value and services to end ,1,0,0
+56, customers. ,0,0,1
+57," United States Marine Corps,  Various Locations ",0,0,0
+58, Russian Special Intelligence ,0,0,0
+59, OCTOBER 2006 - SEPTEMBER 2010 ,0,0,0
+60, Senior Russian linguist and bilingual U.S. representative for multinational ,1,0,0
+61," training events, military exercises, and diplomatic conferences. ",1,0,0
+62, Intelligence lead during Conventional Forces Europe (CFE) and Vienna ,0,0,0
+63, Document of 1999 (VD99) treaty compliance inspections across Former ,1,0,0
+64, Soviet Republics and Western European countries. ,1,0,0
+65," Team Manager, Linguistics & Signal Intelligence ",0,0,0
+66, NOVEMBER 2001- OCTOBER 2006 ,0,0,0
+67, Led a 7 person signals intelligence  collection team in and around ,1,0,0
+68," Fallujah, Iraq during Operation Iraqi Freedom (OIF II and OIF III). ",0,0,0
+69,,0,0,1
