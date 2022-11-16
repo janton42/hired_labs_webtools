@@ -103,9 +103,7 @@ def parsed_resume(request, resume_id):
         parser.get_resume_paths(r['resume'])
         # Print instance attributes out to the consol
         # parser.introduce_self()
-        parser.text_compiler()
-
-
+        parser.read_resume()
     context = {
         'resume': resume
     }

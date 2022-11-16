@@ -33,7 +33,6 @@ class ResumeParser(object):
 		self.resume_in_path = os.path.join(settings.BASE_DIR, resume_file)
 		self.resume_file_ext = self.resume_in_path.split('.')[-1]
 
-
 	def introduce_self(self):
 		print('***INFORMATION***\n\
 		Hi. I\'m a parser.\n\
@@ -77,153 +76,133 @@ class ResumeParser(object):
 		raw_filename = self.resume_out_path + self.name + '_out.csv'
 		df.to_csv(raw_filename, header=['line'])
 
-	def clean_text(input: str):
-	    '''
-	    Removes 'Unnamed: 0' columns from csv files
+	def clean_text(self):
+		filename = self.resume_out_path + self.name + '_out.csv'
+		df = pd.read_csv(filename)
+		df.drop('Unnamed: 0',axis=1, inplace=True)
+		return df
 
-	    parameters:
-	        input = string indicating the name of the .csv file to be
-	            processed
-	    '''
-	    df = pd.read_csv('./output/{}.csv'.format(input))
-	    df.drop('Unnamed: 0',axis=1, inplace=True)
-	    return df
+	def classify_text(self, text):
+	    # Build paths to the ML models
+		bullet_model_path = os.path.join(settings.ML_MODELS_PATH, 'bullets.pkl')
+		name_model_path = os.path.join(settings.ML_MODELS_PATH, 'names.pkl')
+		org_model_path = os.path.join(settings.ML_MODELS_PATH, 'org.pkl')
 
-	def classify_text(text):
-	    '''
-	    Labels lines of text using ML model.
+		# Import the model that has already been trained and tested
+		bullet_model = joblib.load(bullet_model_path)
+		name_model = joblib.load(name_model_path)
+		org_model = joblib.load(org_model_path)
 
-	    '''
-	    # Import the model that has already been trained and tested
-	    bullet_model = joblib.load('./final_models/bullets.pkl')
-	    name_model = joblib.load('./final_models/names.pkl')
-	    org_model = joblib.load('./final_models/org.pkl')
-	    # Group numerical features by removing categorical ones
-	    cat_feat = ['line','line_nostop','line_stemmed','tagged_line']
-	    numeric_only = text.drop(cat_feat, axis=1)
-	    numeric_only.to_csv('./output/working_num_only.csv')
+		# Group numerical features by removing categorical ones
+		cat_feat = ['line','line_nostop','line_stemmed','tagged_line']
+		numeric_only = text.drop(cat_feat, axis=1)
+		numeric_path = self.resume_out_path + self.name + '_numeric_only.csv'
+		numeric_only.to_csv(numeric_path)
 
-	    # Get set of rfeatures used for the bullet_model. This MUST MATCH
-	    # the headers passed to the model during training. If not, an error
-	    # will be raised
+		# Get set of rfeatures used for the bullet_model. This MUST MATCH
+		# the headers passed to the model during training. If not, an error
+		# will be raised
 
-	    bullet_features = numeric_only[
-	    ['stopword_percentage',
-	    'word_count',
-	    'proper_noun_percentage',
-	    'verb_percentage'
-	    ]]
+		bullet_features = numeric_only[
+		['stopword_percentage',
+		'word_count',
+		'proper_noun_percentage',
+		'verb_percentage'
+		]]
 
-	    # Get set of name features
-	    name_features = numeric_only[
-	    ['line_length',
-	    'word_count',
-	    'verb_percentage',
-	    'adj_percentage',
-	    'stopword_percentage',
-	    'punctuation_percentage',
-	    'number_percentage',
-	    'proper_noun_percentage',
-	    'symbol_count',
-	    'list_markers_count',
-	    'determiners_count',
-	    'name_count',
-	    'line_length_trans',
-	    'word_count_trans',
-	    'verb_percentage_trans',
-	    'adj_percentage_trans',
-	    'stopword_percentage_trans',
-	    'punctuation_percentage_trans',
-	    'number_percentage_trans',
-	    'proper_noun_percentage_trans'
-	    ]]
+		# Get set of name features
+		name_features = numeric_only[
+		['line_length',
+		'word_count',
+		'verb_percentage',
+		'adj_percentage',
+		'stopword_percentage',
+		'punctuation_percentage',
+		'number_percentage',
+		'proper_noun_percentage',
+		'symbol_count',
+		'list_markers_count',
+		'determiners_count',
+		'name_count',
+		'line_length_trans',
+		'word_count_trans',
+		'verb_percentage_trans',
+		'adj_percentage_trans',
+		'stopword_percentage_trans',
+		'punctuation_percentage_trans',
+		'number_percentage_trans',
+		'proper_noun_percentage_trans'
+		]]
 
-	    # Get set of company features
-	    org_features = numeric_only[
-	    ['line_length',
-	     'word_count',
-	     'verb_percentage',
-	     'adj_percentage',
-	     'stopword_percentage',
-	     'punctuation_percentage',
-	     'number_percentage',
-	     'proper_noun_percentage',
-	     'symbol_count',
-	     'list_markers_count',
-	     'determiners_count',
-	     'name_count',
-	     'company_count',
-	     'line_length_trans',
-	     'word_count_trans',
-	     'verb_percentage_trans',
-	     'adj_percentage_trans',
-	     'stopword_percentage_trans',
-	     'punctuation_percentage_trans',
-	     'number_percentage_trans',
-	     'proper_noun_percentage_trans'
-	    ]]
-	    # Classify each line of the text as either bullets or not
-	    print('Reading resume...')
-	    bullet_classification = bullet_model.predict(bullet_features)
-	    name_classification = name_model.predict(name_features)
-	    org_classification = org_model.predict(org_features)
+		# Get set of company features
+		org_features = numeric_only[
+		['line_length',
+		 'word_count',
+		 'verb_percentage',
+		 'adj_percentage',
+		 'stopword_percentage',
+		 'punctuation_percentage',
+		 'number_percentage',
+		 'proper_noun_percentage',
+		 'symbol_count',
+		 'list_markers_count',
+		 'determiners_count',
+		 'name_count',
+		 'company_count',
+		 'line_length_trans',
+		 'word_count_trans',
+		 'verb_percentage_trans',
+		 'adj_percentage_trans',
+		 'stopword_percentage_trans',
+		 'punctuation_percentage_trans',
+		 'number_percentage_trans',
+		 'proper_noun_percentage_trans'
+		]]
+		# Classify each line of the text as either bullets or not
+		print('Reading resume...')
+		bullet_classification = bullet_model.predict(bullet_features)
+		name_classification = name_model.predict(name_features)
+		org_classification = org_model.predict(org_features)
 
-	    # Add classification in binary (0,1) to main DataFrame
-	    text['is_bullet'] = bullet_classification
-	    text['is_name'] = name_classification
-	    text['is_org'] = org_classification
+		# Add classification in binary (0,1) to main DataFrame
+		text['is_bullet'] = bullet_classification
+		text['is_name'] = name_classification
+		text['is_org'] = org_classification
 
-	    # Return only the original line and the results of the automated
-	    # classification
-	    classified = text[[
-	        'line',
-	        'is_bullet',
-	        'is_name',
-	        'is_org'
-	        ]]
-	    return classified
+		# Return only the original line and the results of the automated
+		# classification
+		classified = text[[
+		    'line',
+		    'is_bullet',
+		    'is_name',
+		    'is_org'
+		    ]]
+		return classified
 
-	def read_resume(src, file_ex, folder):
-	    '''
-	    Labels a resume's parts
-
-	    Takes in a .txt file, runs ML models to label each row, then writes
-	        out the results into a .csv file in the ./output/ folder
-
-	    parameters:
-	        src = string to indicate the data source type (e.g. user input,
-	            names, companies, etc.)
-	        file_ex = string indicating the file extension to be searched
-	            (e.g .txt, .pdf, .csv, .json); any file extension is
-	            acceptable
-	        folder = string indicating the path to the folder containing
-	            files to be read
-
-
-	    '''
+	def read_resume(self):
 	    # Compile text from several files of the same type in a given folder
-	    print('Compiling text')
-	    text_compiler(test_resume_folder, src, file_ex)
+		print('Compiling text')
+		self.text_compiler()
+		# Remove unecessary columns
+		print('Cleaning things up a bit')
+		data = self.clean_text()
+		# Create features for us by the ML model
+		print('Creating features for La Machina')
+		data = create_features(data)
 
-	    # Remove unecessary columns
-	    print('Cleaning things up a bit')
-	    data = clean_text(src + '_out')
+		# Write out data for debugging, or for use elsewhere
+		print('Writing out clean(er) data with features')
+		working_data = self.resume_out_path + self.name + '_working_data.csv'
+		data.to_csv(working_data)
 
-	    # Create features for us by the ML model
-	    print('Creating features for La Machina')
-	    data = create_features(data)
+		# Run ML model on input text with features included
+		print('La Machina is reading your resume')
+		labeled = self.classify_text(data)
 
-	    # Write out data for debugging, or for use elsewhere
-	    print('Writing out clean(er) data with features')
-	    data.to_csv('./output/working_data.csv')
-
-	    # Run ML model on input text with features included
-	    print('La Machina is reading your resume')
-	    labeled = classify_text(data)
-
-	    # Write out labeled data
-	    print('La Machina has labeled your resume.\nThe .csv file is here:\t\'./output/labeled.csv\'')
-	    labeled.to_csv('./output/labeled.csv')
+		# Write out labeled data
+		print('La Machina has printed your results.')
+		labeled_data = self.resume_out_path + self.name + '_labeled_data.csv'
+		labeled.to_csv(labeled_data)
 
 	    # Print success message
-	    print('Success! {}'.format(random.choice(messages)))
+	    # print('Success! {}'.format(random.choice(messages)))

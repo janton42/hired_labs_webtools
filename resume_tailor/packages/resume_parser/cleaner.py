@@ -1,7 +1,9 @@
 import re
 import string
 import nltk
+import os
 import pandas as pd
+from django.conf import settings
 # from sklearn.preprocessing import LabelBinarizer
 
 
@@ -14,10 +16,12 @@ adj_tags = ['JJ', 'JJR','JJS']
 symbol_tags = ['SYM']
 list_tags = ['LS']
 determiner_tags = ['DT']
-# name_list = pd.read_csv('./output/freq_names.csv')
-# names = name_list.name.unique()
-# company_list = pd.read_csv('./output/companies.csv')
-# companies = company_list.trimmed_name.unique()
+name_path = os.path.join(settings.ENTITIES_PATH, 'freq_names.csv')
+name_list = pd.read_csv(name_path)
+names = name_list.name.unique()
+company_path = os.path.join(settings.ENTITIES_PATH, 'companies.csv')
+company_list = pd.read_csv(company_path)
+companies = company_list.trimmed_name.unique()
 
 def remove_stopwords(text):
     text = ''.join([word for word in text if word not in string.punctuation])
@@ -36,39 +40,39 @@ def count_words(text):
 
 def count_verbs(pos_tags: list) -> int:
     count = sum([1 for pair in pos_tags if pair[1] in verb_tags])
-    return round(count/(len(pos_tags)),3)*100
+    return round(count/(len(pos_tags)),3)*100 if len(pos_tags) > 0 else 0
 
 def count_adj(pos_tags: list) -> int:
     count = sum([1 for pair in pos_tags if pair[1] in adj_tags])
-    return round(count/(len(pos_tags)),3)*100
+    return round(count/(len(pos_tags)),3)*100 if len(pos_tags) > 0 else 0
 
 def count_nums(pos_tags: list) -> int:
     count = sum([1 for pair in pos_tags if pair[1] == 'CD'])
-    return round(count/(len(pos_tags)),3)*100
+    return round(count/(len(pos_tags)),3)*100 if len(pos_tags) > 0 else 0
 
 def count_proper_nouns(pos_tags: list) -> int:
     count = sum([1 for pair in pos_tags if pair[1] == 'NNP'])
-    return round(count/(len(pos_tags)),3)*100
+    return round(count/(len(pos_tags)),3)*100 if len(pos_tags) > 0 else 0
 
 def count_stopwords(line: str) -> int:
     count = sum([1 for word in nltk.word_tokenize(line) if word in nltk.corpus.stopwords.words('english')])
-    return round(count/(len(line) - line.count(' ')),3)*100
+    return round(count/(len(line) - line.count(' ')),3)*100 if len(line) > 0 else 0
 
 def count_punct(line: str) -> int:
     count = sum([1 for char in line if char in string.punctuation])
-    return round(count/(len(line) - line.count(' ')), 3)*100
+    return round(count/(len(line) - line.count(' ')), 3)*100 if len(line) > 0 else 0
 
 def count_symbols(line: str) -> int:
     count = sum([1 for pair in line if pair[1] in symbol_tags])
-    return round(count/(len(line)),3)*100
+    return round(count/(len(line)),3)*100 if len(line) > 0 else 0
 
 def count_list_item_markers(line: str) -> int:
     count = sum([1 for pair in line if pair[1] in list_tags])
-    return round(count/(len(line)),3)*100
+    return round(count/(len(line)),3)*100 if len(line) > 0 else 0
 
 def count_determiners(line: str) -> int:
     count = sum([1 for pair in line if pair[1] in determiner_tags])
-    return round(count/(len(line)),3)*100
+    return round(count/(len(line)),3)*100 if len(line) > 0 else 0
 
 def count_names(line: str) -> int:
     count = sum([1 for name in line if name in names])
