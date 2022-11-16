@@ -81,6 +81,11 @@ footer p {
   background-position:left;
 }
 
+.page-header a {
+  text-decoration: none;
+  color:inherit;
+}
+
 .button {
   color: rgb(255, 255, 255);
   font-size: 16px;

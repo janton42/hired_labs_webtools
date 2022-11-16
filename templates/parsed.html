@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% if resume %}
+  <p>You parsed the resume below</p>
+  <br>
+  {% for r in resume %}
+
+    <p>Title:               {{ r.title }}</p>
+    <p>Uploaded file path:  {{ r.resume }}</p>
+  {% endfor %}
+  <a href="../../static/output/{{user.username}}/{{user.username}}_labeled_data.csv" download>Download Parsed Resume</a>
+{% else %}
+<p>Negative Ghost Rider!</p>
+{% endif %}
+
+{% endblock %}

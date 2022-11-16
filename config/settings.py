@@ -21,6 +21,10 @@ env.read_env(env_file='config/.env')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+ML_MODELS_PATH = os.path.join(BASE_DIR,\
+ 'resume_tailor/packages/resume_parser/final_models/')
+ENTITIES_PATH = os.path.join(BASE_DIR,\
+  'resume_tailor/packages/resume_parser/entities/')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -31,12 +35,12 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 # For development
-# DEBUG = True
-# ALLOWED_HOSTS = ['*']
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 # For production
-DEBUG = False
-ALLOWED_HOSTS = ['www.hiredlabs.org']
+# DEBUG = False
+# ALLOWED_HOSTS = ['www.hiredlabs.org']
 
 
 # Application definition
@@ -132,6 +136,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/'),
 )
 STATIC_URL = '/static/'
+RESUME_OUT_PATH =os.path.join(BASE_DIR,'static/output/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -143,9 +148,9 @@ LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 
 # Comment out the lines below for dev, uncomment them in prod
-SECURE_HSTS_SECONDS = 25
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_SECONDS = 25
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True

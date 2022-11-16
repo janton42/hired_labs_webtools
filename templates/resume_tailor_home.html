@@ -1,11 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-  <div>
-      <h2>Resume Tailor</h2>
-      <p>Content coming soon!</p>
-      <a href="{% url 'update_profile' %}">Update Profile</a>
-  </div>
+
+{% if resumes %}
+  <p>My uploaded resumes:</p>
+  <ul>
+    {% for resume in resumes %}
+      <li>{{ resume.title }}:  <a href="{% url 'parsed' resume.id %}">parse</a></li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'upload_resume' %}">Upload Another</a>
+{% else %}
+  <p>You don't have any uploaded resumes.</p>
+  <a href="{% url 'upload_resume' %}">Upload a Resume</a>
+{% endif %}
 
 
 {% endblock %}
