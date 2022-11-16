@@ -132,3 +132,6 @@ investotron/
 db/
 *.db
 api.py
+
+# parser outputs
+static/output/*
