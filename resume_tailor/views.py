@@ -103,8 +103,10 @@ def parsed_resume(request, resume_id):
         parser.get_resume_paths(r['resume'])
         # Print instance attributes out to the consol
         # parser.introduce_self()
+        status = parser.say_status()
         parser.read_resume()
     context = {
-        'resume': resume
+        'resume': resume,
+        'status': status
     }
     return render(request, 'parsed.html', context)

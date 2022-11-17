@@ -206,3 +206,7 @@ class ResumeParser(object):
 
 	    # Print success message
 	    # print('Success! {}'.format(random.choice(messages)))
+
+	def say_status(self):
+		status = settings.DEBUG
+		return status
