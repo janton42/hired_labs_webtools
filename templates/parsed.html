@@ -2,8 +2,6 @@
 {% load static %}
 
 {% block content %}
-<script>function startDownload(url) { window.location.href = url; }
-</script>
 {% if resume %}
   <p>You parsed the resume below</p>
   <br>
@@ -13,9 +11,11 @@
     <p>Uploaded file path:  {{ r.resume }}</p>
   {% endfor %}
   {% if status == True %}
+  <p>You are in a local development environment.</p>
   <!-- <a onclick="startDownload('http://somedomain.com/somefolder/somefile')" download="myapp-v1.1.0.apk"> <img src="img/download-apk.png" alt=""/> </a> -->
-    <a onclick="startDownload(../../static/output/{{user.username}}/{{user.username}}_labeled_data.csv)" download="{{user.username}}_labeled_data.csv">Download Parsed Resume</a>
+    <a href="../../static/output/{{user.username}}/{{user.username}}_stan_labeled_data.csv" download="{{user.username}}_labeled_data.csv">Download Parsed Resume</a>
   {% elif status == False %}
+  <p>You are on the live site!!</p>
     <a href="https://www.hiredlabs.org/static/output/{{user.username}}/{{user.username}}_labeled_data.csv" download>Download Parsed Resume</a>
   {% endif %}
 {% else %}

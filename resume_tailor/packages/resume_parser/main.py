@@ -3,6 +3,8 @@ import os
 import joblib
 import random
 import json
+import nltk
+import warnings
 
 import pandas as pd
 
@@ -11,6 +13,9 @@ from django.conf import settings
 from pathlib import Path
 from pdfminer.high_level import extract_text
 from striprtf.striprtf import rtf_to_text
+from nltk.parse.corenlp import CoreNLPServer, CoreNLPParser
+
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 from .cleaner import create_features
 from .messages import messages
@@ -23,6 +28,64 @@ class ResumeParser(object):
 
 		self.birth = datetime.now()
 		self.name = str(name)
+		self.server = CoreNLPServer()
+		self.server.corenlp_options = ['-preload', 'ner']
+		self.server.java_options = ['-mx5g']
+		self.server.url = 'http://localhost:9000'
+
+		self.bullet_feature_headings = [
+			'stopword_percentage',
+			'word_count',
+			'proper_noun_percentage',
+			'verb_percentage'
+		]
+
+		self.name_feature_headings = [
+			'line_length',
+			'word_count',
+			'verb_percentage',
+			'adj_percentage',
+			'stopword_percentage',
+			'punctuation_percentage',
+			'number_percentage',
+			'proper_noun_percentage',
+			'symbol_count',
+			'list_markers_count',
+			'determiners_count',
+			'name_count',
+			'line_length_trans',
+			'word_count_trans',
+			'verb_percentage_trans',
+			'adj_percentage_trans',
+			'stopword_percentage_trans',
+			'punctuation_percentage_trans',
+			'number_percentage_trans',
+			'proper_noun_percentage_trans'
+		]
+
+		self.org_feature_headings = [
+			'line_length',
+			 'word_count',
+			 'verb_percentage',
+			 'adj_percentage',
+			 'stopword_percentage',
+			 'punctuation_percentage',
+			 'number_percentage',
+			 'proper_noun_percentage',
+			 'symbol_count',
+			 'list_markers_count',
+			 'determiners_count',
+			 'name_count',
+			 'company_count',
+			 'line_length_trans',
+			 'word_count_trans',
+			 'verb_percentage_trans',
+			 'adj_percentage_trans',
+			 'stopword_percentage_trans',
+			 'punctuation_percentage_trans',
+			 'number_percentage_trans',
+			 'proper_noun_percentage_trans'
+		]
 
 	def get_resume_paths(self, resume_file: str)-> str:
 
@@ -103,62 +166,15 @@ class ResumeParser(object):
 		# the headers passed to the model during training. If not, an error
 		# will be raised
 
-		bullet_features = numeric_only[
-		['stopword_percentage',
-		'word_count',
-		'proper_noun_percentage',
-		'verb_percentage'
-		]]
+		bullet_features = numeric_only[self.bullet_feature_headings]
 
 		# Get set of name features
-		name_features = numeric_only[
-		['line_length',
-		'word_count',
-		'verb_percentage',
-		'adj_percentage',
-		'stopword_percentage',
-		'punctuation_percentage',
-		'number_percentage',
-		'proper_noun_percentage',
-		'symbol_count',
-		'list_markers_count',
-		'determiners_count',
-		'name_count',
-		'line_length_trans',
-		'word_count_trans',
-		'verb_percentage_trans',
-		'adj_percentage_trans',
-		'stopword_percentage_trans',
-		'punctuation_percentage_trans',
-		'number_percentage_trans',
-		'proper_noun_percentage_trans'
-		]]
+		name_features = numeric_only[self.name_feature_headings]
 
 		# Get set of company features
-		org_features = numeric_only[
-		['line_length',
-		 'word_count',
-		 'verb_percentage',
-		 'adj_percentage',
-		 'stopword_percentage',
-		 'punctuation_percentage',
-		 'number_percentage',
-		 'proper_noun_percentage',
-		 'symbol_count',
-		 'list_markers_count',
-		 'determiners_count',
-		 'name_count',
-		 'company_count',
-		 'line_length_trans',
-		 'word_count_trans',
-		 'verb_percentage_trans',
-		 'adj_percentage_trans',
-		 'stopword_percentage_trans',
-		 'punctuation_percentage_trans',
-		 'number_percentage_trans',
-		 'proper_noun_percentage_trans'
-		]]
-		# Classify each line of the text as either bullets or not
+		org_features = numeric_only[self.org_feature_headings]
+
+		# Classify each line of the text as either bullet or not
 		print('Reading resume...')
 		bullet_classification = bullet_model.predict(bullet_features)
 		name_classification = name_model.predict(name_features)
@@ -177,7 +193,46 @@ class ResumeParser(object):
 		    'is_name',
 		    'is_org'
 		    ]]
+
 		return classified
+
+	def labeler(self, row):
+		# Give final labels using Stanford's NLP Named Entity tagger to
+		# supplement fill in the non-bullet items, giving the "None"
+		# label to anything remaining unidentified.
+		if row['is_bullet'] == 1:
+			return 'Bullet'
+		elif row['is_name'] == 1:
+			return 'Name'
+		else:
+			print('Untagged!\nTagging...')
+			print('Doc line|len: {}|{}'.format(row['doc_line'],\
+			len(row['line'])))
+			if len(row['line']) == 1:
+				return 'None'
+			else:
+				ents = self.ner_tagger.tag(row['line'].split())
+				print('Tagged')
+				return ents
+
+	def count_named_ents(self, label: str):
+		skips = ['Name', 'Bullet', 'None']
+		if label not in skips:
+			count = sum([1 for pair in label if pair[1] != 'O'])
+			return count
+		else:
+			return 0
+
+	def relabeler(self, row):
+	    if row['ents'] == 0:
+	        return row['label']
+	    elif row['ents'] == 1:
+	        label = ''
+	        for ent in row['label']:
+	            if ent[1] != 'O':
+	                label = ent[1].capitalize()
+	        if label != '':
+	            return label
 
 	def read_resume(self):
 	    # Compile text from several files of the same type in a given folder
@@ -198,11 +253,35 @@ class ResumeParser(object):
 		# Run ML model on input text with features included
 		print('La Machina is reading your resume')
 		labeled = self.classify_text(data)
-
-		# Write out labeled data
-		print('La Machina has printed your results.')
 		labeled_data = self.resume_out_path + self.name + '_labeled_data.csv'
 		labeled.to_csv(labeled_data)
+
+		partial = pd.read_csv(self.resume_out_path + self.name + '_labeled_data.csv', sep=',')
+		# Start Stanford NLP Server
+		print('Starting server...\n')
+		self.server.start()
+		print('Server started')
+
+
+		# Instantiate a tagger
+		print('Instantiating a ner tagger...')
+		self.ner_tagger = CoreNLPParser(url = 'http://localhost:9000',\
+		 tagtype='ner')
+		print('Tagger ready.')
+
+		print('Labeling data...')
+		partial.rename({'Unnamed: 0': 'doc_line'}, axis=1, inplace=True)
+		partial['label'] = partial.apply(lambda x: self.labeler(x), axis=1)
+		print('Data has been labeled.\nShutting down server...')
+		self.server.stop()
+		print('Server shut down.')
+
+		partial['ents'] = partial['label'].apply(lambda x: self.count_named_ents(x))
+		partial['label'] = partial.apply(lambda x: self.relabeler(x), axis =1)
+		# Write out labeled data
+		final_labeled_data = self.resume_out_path + self.name + '_final_labeled_data.csv'
+		partial.to_csv(final_labeled_data)
+		print('La Machina has printed your results.')
 
 	    # Print success message
 	    # print('Success! {}'.format(random.choice(messages)))
