@@ -8,7 +8,8 @@ import warnings
 
 import pandas as pd
 
-from datetime import datetime
+from datetime import datetime, time
+from time import sleep
 from django.conf import settings
 from pathlib import Path
 from pdfminer.high_level import extract_text
@@ -34,44 +35,44 @@ class ResumeParser(object):
 		self.server.url = 'http://localhost:9000'
 
 		self.bullet_feature_headings = [
-			'stopword_percentage',
+			'stopword_%',
 			'word_count',
-			'proper_noun_percentage',
-			'verb_percentage'
+			'proper_noun_%',
+			'verb_%'
 		]
 
 		self.name_feature_headings = [
 			'line_length',
 			'word_count',
-			'verb_percentage',
-			'adj_percentage',
-			'stopword_percentage',
-			'punctuation_percentage',
-			'number_percentage',
-			'proper_noun_percentage',
+			'verb_%',
+			'adj_%',
+			'stopword_%',
+			'punctuation_%',
+			'number_%',
+			'proper_noun_%',
 			'symbol_count',
 			'list_markers_count',
 			'determiners_count',
 			'name_count',
 			'line_length_trans',
 			'word_count_trans',
-			'verb_percentage_trans',
-			'adj_percentage_trans',
-			'stopword_percentage_trans',
-			'punctuation_percentage_trans',
-			'number_percentage_trans',
-			'proper_noun_percentage_trans'
+			'verb_%_trans',
+			'adj_%_trans',
+			'stopword_%_trans',
+			'punctuation_%_trans',
+			'number_%_trans',
+			'proper_noun_%_trans'
 		]
 
 		self.org_feature_headings = [
 			'line_length',
 			 'word_count',
-			 'verb_percentage',
-			 'adj_percentage',
-			 'stopword_percentage',
-			 'punctuation_percentage',
-			 'number_percentage',
-			 'proper_noun_percentage',
+			 'verb_%',
+			 'adj_%',
+			 'stopword_%',
+			 'punctuation_%',
+			 'number_%',
+			 'proper_noun_%',
 			 'symbol_count',
 			 'list_markers_count',
 			 'determiners_count',
@@ -79,12 +80,12 @@ class ResumeParser(object):
 			 'company_count',
 			 'line_length_trans',
 			 'word_count_trans',
-			 'verb_percentage_trans',
-			 'adj_percentage_trans',
-			 'stopword_percentage_trans',
-			 'punctuation_percentage_trans',
-			 'number_percentage_trans',
-			 'proper_noun_percentage_trans'
+			 'verb_%_trans',
+			 'adj_%_trans',
+			 'stopword_%_trans',
+			 'punctuation_%_trans',
+			 'number_%_trans',
+			 'proper_noun_%_trans'
 		]
 
 	def get_resume_paths(self, resume_file: str)-> str:
@@ -205,14 +206,10 @@ class ResumeParser(object):
 		elif row['is_name'] == 1:
 			return 'Name'
 		else:
-			print('Untagged!\nTagging...')
-			print('Doc line|len: {}|{}'.format(row['doc_line'],\
-			len(row['line'])))
 			if len(row['line']) == 1:
 				return 'None'
 			else:
 				ents = self.ner_tagger.tag(row['line'].split())
-				print('Tagged')
 				return ents
 
 	def count_named_ents(self, label: str):
@@ -224,15 +221,13 @@ class ResumeParser(object):
 			return 0
 
 	def relabeler(self, row):
-	    if row['ents'] == 0:
+	    if row['ents'] == 0 and row['label'] == 'Bullet'\
+		 or row['label'] == 'Name':
 	        return row['label']
 	    elif row['ents'] == 1:
-	        label = ''
-	        for ent in row['label']:
-	            if ent[1] != 'O':
-	                label = ent[1].capitalize()
-	        if label != '':
-	            return label
+	        label = [ent[1].capitalize() for ent in row['label'] if ent[1] != 'O']
+	        if label[0] != '':
+	            return label[0]
 
 	def read_resume(self):
 	    # Compile text from several files of the same type in a given folder
@@ -282,7 +277,14 @@ class ResumeParser(object):
 		final_labeled_data = self.resume_out_path + self.name + '_final_labeled_data.csv'
 		partial.to_csv(final_labeled_data)
 		print('La Machina has printed your results.')
-
+		self.death = datetime.now()
+		lifespan = self.death - self.birth
+		sleep(2)
+		print('La Machina read your resume in {} seconds.'\
+		.format(lifespan))
+		sleep(2)
+		print('You\'re welcome for my service.')
+		sleep(0.5)
 	    # Print success message
 	    # print('Success! {}'.format(random.choice(messages)))
 
