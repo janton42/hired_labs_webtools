@@ -221,13 +221,24 @@ class ResumeParser(object):
 			return 0
 
 	def relabeler(self, row):
-	    if row['ents'] == 0 and row['label'] == 'Bullet'\
+		if row['ents'] == 0 and row['label'] == 'Bullet'\
 		 or row['label'] == 'Name':
-	        return row['label']
-	    elif row['ents'] == 1:
-	        label = [ent[1].capitalize() for ent in row['label'] if ent[1] != 'O']
-	        if label[0] != '':
-	            return label[0]
+			return row['label']
+		elif row['ents'] == 1:
+			label = [ent[1].capitalize() for ent in row['label'] if ent[1] != 'O']
+			if label[0] != '':
+				return label[0]
+		elif row['ents'] == 0 and row['is_bullet'] == 0:
+			return 'None'
+		else:
+			tags = list()
+			for tag in row['label']:
+				if tag [1] != 'O' and tag[1] not in tags:
+					tags.append(tag[1])
+			if len(tags) == 1:
+				return tags[0].capitalize()
+			else:
+				return tags
 
 	def read_resume(self):
 	    # Compile text from several files of the same type in a given folder
