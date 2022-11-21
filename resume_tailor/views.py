@@ -30,6 +30,9 @@ def register(request):
     context = {'form': form}
     return render(request, 'register.html', context)
 
+def about_us(request):
+    return render(request, 'about.html')
+
 # All views below should require login
 
 @login_required

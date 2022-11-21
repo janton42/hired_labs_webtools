@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static%}
+{% load static %}
 {% get_static_prefix as STATIC_PREFIX %}
 <html lang="en-US">
   <head>
@@ -23,7 +23,7 @@
             <li><a href="{% url 'login' %}">Login</a></li>
           {% endif %}
 
-          <li style="float:right"><a class="active" href="#about">About</a></li>
+          <li style="float:right"><a class="active" href="{% url 'about' %}">About</a></li>
         </ul>
     </header>
 
