@@ -64,10 +64,36 @@ footer p {
   margin-bottom: 10px;
 }
 
+.page-header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #333; */
+}
+
+.page-header li {
+  float: left;
+}
+
+.page-header li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.page-header li a:hover {
+  background-color: #111;
+}
+
 .signup {
   justify-content: center;
   text-align: center;
 }
+
 .page-header {
   background: #0e1f33;
   color: #f7941d;
@@ -75,10 +101,11 @@ footer p {
   box-shadow: 5px 5px 15px 5px #000000;
   text-align: center;
   background-image: url('../images/HiredLabs Icon negative.svg');
-  background-size:15%;
+  background-size:11%;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position:left;
+  background-position:left top;
+
 }
 
 .page-header a {
