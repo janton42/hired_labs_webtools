@@ -9,5 +9,6 @@ urlpatterns = [
     path('profile/settings/', views.settings, name='settings'),
     path('upload_resume/', views.upload_resume, name='upload_resume'),
     path('parsed/<int:resume_id>', views.parsed_resume, name='parsed'),
-    path('about', views.about_us, name='about'),
+    path('about/', views.about_us, name='about'),
+    path('contact/', views.contact, name='contact'),
 ]

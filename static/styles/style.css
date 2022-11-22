@@ -39,15 +39,18 @@ header {
 
 footer {
   clear:both;
+  position: sticky;
+  /* position: fixed; */
+  /* z-index: 0; */
+  /* z-index: 100; */
   bottom:0;
-  padding-top: 2px;
-  overflow: hidden;
-  text-align: center;
-  position: relative;
-  z-index: 100;
   display:block;
-  justify-content: center;
-  width: inherit;
+  /* padding: 1px; */
+  /* margin: 0; */
+  /* display: block; */
+  padding-top: 2px;
+  text-align: center;
+  overflow: hidden;
   height: 48px;
   background-color: #0e1f33;
   -webkit-box-shadow: 5px 5px 15px 5px #000000;
@@ -150,11 +153,11 @@ background: #144E75; }
 @media (max-width: 600px) {
 
 footer p {
-  font-size: 10px;
+  font-size: 14px;
   word-spacing: 1px;
   /*text-transform: capitalize;*/
   text-align: center;
   color: #ffffff;
-  padding-top: 6px;
-  margin-bottom: 6px;
+  padding-top: 10px;
+  margin-bottom: 10px;
 }

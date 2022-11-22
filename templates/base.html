@@ -15,10 +15,11 @@
         <h1>Hired Labs</a></h1>
         <ul>
           <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <!-- <li><a href="#news">News</a></li> -->
+          <li><a href="{% url 'contact' %}">Contact</a></li>
           {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="{% url 'resume_tailor_home' %}">Resume Tailor (alpha)</a></li>
+            <li><a  href="{% url 'logout' %}">Logout</a></li>
           {% else %}
             <li><a href="{% url 'login' %}">Login</a></li>
           {% endif %}
@@ -40,10 +41,10 @@
           </div>
       </main>
 
-
-    <footer>
-        <p>email: info@hiredlabs.org | Copyright &copy; 2022 Hired Labs, inc.</p>
-    </footer>
+      <footer>
+          <p>email: info@hiredlabs.org | Copyright &copy; 2022 Hired Labs, inc.</p>
+      </footer>
 
   </body>
+
 </html>

@@ -16,6 +16,12 @@ from .packages.resume_parser.main import ResumeParser
 def home(request):
     return render(request, 'hired_labs_home.html')
 
+def about_us(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
 def register(request):
     if request.method =='POST':
         form = UserRegistrationForm(request.POST)
@@ -30,8 +36,7 @@ def register(request):
     context = {'form': form}
     return render(request, 'register.html', context)
 
-def about_us(request):
-    return render(request, 'about.html')
+
 
 # All views below should require login
 
