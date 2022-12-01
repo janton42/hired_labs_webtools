@@ -503,6 +503,15 @@ class ResumeParser(object):
 		detailed.reset_index(drop=True, inplace=True)
 		return detailed
 
+	def say_status(self):
+		'''Shows if DEBUG is True or False.
+
+		Returns:
+			Boolean.
+		'''
+		status = settings.DEBUG
+		return status
+
 	def read_resume(self):
 		'''Reads a resume.
 
