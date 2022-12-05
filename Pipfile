@@ -18,7 +18,6 @@ filelock = "*"
 joblib = "*"
 numpy = "*"
 pandas = "*"
-pdfminer = "*"
 "pdfminer.six" = "*"
 platformdirs = "*"
 pycparser = "*"
@@ -30,6 +29,7 @@ six = "*"
 sqlparse = "*"
 striprtf = "*"
 tqdm = "*"
+nltk = "*"
 
 [dev-packages]
 
