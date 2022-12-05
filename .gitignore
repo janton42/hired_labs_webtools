@@ -134,5 +134,5 @@ db/
 api.py
 
 # parser outputs
-static/output/*
+static/output/*/
 uploads/
