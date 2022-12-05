@@ -56,13 +56,13 @@ class ResumeParser(object):
 		resume_in_path: String with path to an uploaded file, which will
 			be in the applicaiton's /uploads/ directory.
 		resume_file_ext: String with the file type of the resume file.
-		death: Timestamp of when the parcer returns the final output.
+		death: Timestamp of when the parser returns the final output.
 
 	"""
 
 	def __init__(self, name: str):
 		super(ResumeParser, self).__init__()
-		'''Inits ResumeParcer with birth, name, server,
+		'''Inits ResumeParser with birth, name, server,
 			server.corenlp_options, server.java_options, server.url,
 			bullet_feature_headings, name_feature_headings,
 			org_feature_headings, and keepers.
@@ -515,7 +515,7 @@ class ResumeParser(object):
 	def read_resume(self):
 		'''Reads a resume.
 
-		Main class method for ResumeParcer.
+		Main class method for Resume.
 
 		Returns:
 			A csv file with each row labeled.
@@ -587,7 +587,7 @@ class ResumeParser(object):
 		# single-word labels from a list. The results is a list of tuples
 		# following the pattern [(word, tag), ...]
 
-		# Slice any row with a 'label' not listed in the ResumeParcer.keepers
+		# Slice any row with a 'label' not listed in the ResumeParser.keepers
 		# attribute.
 		keep = partial[~partial['label'].isin(self.keepers)]
 		keep.reset_index(drop=True, inplace=True)
