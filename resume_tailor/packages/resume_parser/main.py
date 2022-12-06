@@ -71,7 +71,7 @@ class ResumeParser(object):
 			name: String of the username for the user requesting a
 				parsed resume.
 		 '''
-		print('La Machina lives!!!\t(ResumeParser instantiated.)')
+		print('La Maquina lives!!!\t(ResumeParser instantiated.)')
 		self.birth = datetime.now()
 		self.name = str(name)
 		self.server = CoreNLPServer()
@@ -522,14 +522,14 @@ class ResumeParser(object):
 
 		'''
 	    # Compile text from several files of the same type in a given folder
-		print('La Machina is getting your text...')
+		print('La Maquina is getting your text...')
 		self.text_compiler()
 		# Remove unecessary columns
-		print('La Machina is cleaning things up a bit...')
+		print('La Maquina is cleaning things up a bit...')
 		data = self.clean_text()
 
 		# Create features for use by the ML model
-		print('La Machina is learning English...\t(creating features)')
+		print('La Maquina is learning English...\t(creating features)')
 		data = create_features(data)
 
 		# Write out data for debugging, or for use elsewhere
@@ -538,7 +538,7 @@ class ResumeParser(object):
 		data.to_csv(working_data)
 
 		# Run ML model on input text with features included
-		print('La Machina is reading your resume...')
+		print('La Maquina is reading your resume...')
 		labeled = self.classify_text(data)
 
 		# Write out data for debugging, or for use elsewhere
@@ -549,17 +549,17 @@ class ResumeParser(object):
 		partial = pd.read_csv(self.resume_out_path + self.name + '_labeled_data.csv', sep=',')
 
 		# Start Stanford NLP Server
-		print('La Machina needs more input!...\t(starting server for Stanford ner tagger)\n')
+		print('La Maquina needs more input!...\t(starting server for Stanford ner tagger)\n')
 		self.server.start()
-		print('La Machina is connected to the network...\t(server started)')
+		print('La Maquina is connected to the network...\t(server started)')
 
 		# Instantiate a NER tagger
-		print('La Machina is learning more...\t(instantiating a Stanford ner tagger)')
+		print('La Maquina is learning more...\t(instantiating a Stanford ner tagger)')
 		self.ner_tagger = CoreNLPParser(url = 'http://localhost:9000',\
 		 tagtype='ner')
-		print('La Machina is ready to read more of your resume...')
+		print('La Maquina is ready to read more of your resume...')
 		# Rename unnamed column
-		print('La Machina is labeling data...')
+		print('La Maquina is labeling data...')
 		partial.rename({'Unnamed: 0': 'doc_line'}, axis=1, inplace=True)
 
 		# Label Named Entities using Stanford NER tagger
@@ -582,7 +582,7 @@ class ResumeParser(object):
 		ner_labeled_data = self.resume_out_path + self.name + '_ner_labeled_data.csv'
 		partial.to_csv(ner_labeled_data)
 
-		print('La Machina is cleaning things up a bit more...')
+		print('La Maquina is cleaning things up a bit more...')
 		# Break apart the lines with multiple NER tags, by filtering
 		# single-word labels from a list. The results is a list of tuples
 		# following the pattern [(word, tag), ...]
@@ -623,9 +623,9 @@ class ResumeParser(object):
 		main.to_csv(final_labeled_data)
 
 		# Print confirmation message, and report how long the process took
-		print('La Machina has printed your results.')
+		print('La Maquina has printed your results.')
 		self.death = datetime.now()
 		lifespan = self.death - self.birth
-		print('La Machina read your resume in {} seconds.'\
+		print('La Maquina read your resume in {} seconds.'\
 		.format(lifespan))
 		print('You\'re welcome for my service.')
