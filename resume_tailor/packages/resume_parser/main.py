@@ -18,6 +18,7 @@ from striprtf.striprtf import rtf_to_text
 from nltk.parse.corenlp import CoreNLPServer, CoreNLPParser
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
+warnings.simplefilter(action='ignore', category=UserWarning)
 
 from .cleaner import create_features
 from .messages import messages
