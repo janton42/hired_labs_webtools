@@ -1,0 +1,15 @@
+[project]
+name = 'hired-labs-webtools'
+version = '0.0.0'
+description = 'Web application for Hired Labs.'
+readme = 'README.md'
+requires-python = '3.8'
+license = {file = 'LICENSE.txt'}
+authors = [
+  {email = jantonstock@gmail.com},
+  {name = 'Jeff Stock'}
+]
+
+[project.urls]
+homepage = 'https://www.hiredlabs.org'
+repository = 'https://github.com/janton42/hired_labs_webtools'
